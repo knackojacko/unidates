@@ -1,0 +1,22 @@
+<% provide(:title, 'Create Answers') %>
+<% provide(:button_text, 'Add to questionnaire') %>
+
+<h3>Add answers</h3>
+
+<div class="form-class">
+    
+        <% question = get_question(params[:qID]) %>
+        
+        <%= form_for @answer, :html => {:multipart => true} do |f| %>
+        
+            <%= f.label question.question %>
+            <%= f.text_field :answer1, class: 'form-control' %>
+            <%= f.text_field :answer2, class: 'form-control' %>
+            <%= f.hidden_field :questionID, :value => question.id %>
+            
+            <%= f.submit yield(:button_text), class: "btn btn-primary" %>
+        
+        <%end%>
+   </div>
+    
+</div>
