@@ -16,15 +16,36 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+.mainbackground.image{
+  // Link to resource for safety reasons
+  //https://www.flickr.com/photos/noquedanfotos/5425846901/in/photostream/
+  //-webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+  //filter: grayscale(100%);
+  background: url("main_back.jpg") no-repeat;
+  background-size: 100%;
+  height: 100vh;
+  width: 100vw;
+}
 .navbar.transparent.navbar-inverse.navbar-fixed-top {
-  background: rgba(50, 50, 50, 0.25);
+  background: rgba(50, 50, 50, 0.7);
   border: none; // Remove bootstrap border for cleaner navbar
+  color:white;
+  filter: none;
 }
 
 .navbar-brand.logo {
-  color: white;
+  color: red;
 }
 
-navbar.links {
-  color: white !important;
+.navbar-inverse .navbar-nav > li > a {
+  color:white;
+}
+
+.navbar-inverse .navbar-nav > li > a:hover {
+  color:greenyellow !important;
+}
+
+
+.container.main {
+  padding-top: 8%;
 }

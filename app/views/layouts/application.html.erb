@@ -7,21 +7,25 @@
                           'data-turbolinks-track': 'reload' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 </head>
-<body>
-<header class="navbar transparent navbar-inverse navbar-fixed-top">
-  <div class="container">
-    <div class="navbar-brand logo">UniDates ❤</div>
-    <nav>
-      <ul class="nav navbar-nav navbar-right" style="color:white">
-        <li><%= link_to "Home", root_path %></li>
-        <li><%= link_to "Help", '#' %></li>
-        <li><%= link_to "Log in", '#' %></li>
-      </ul>
-    </nav>
+<body class="mainbackground">
+<div class="mainbackground image">
+  <header class="navbar transparent navbar-inverse navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-brand logo">UniDates ❤</div>
+      <nav>
+        <ul class="nav navbar-nav navbar-right links">
+          <li><%= link_to "Home", root_path %></li>
+          <li><%= link_to "Log In", signup_path %></li>
+          <li><%= link_to "Sign Up", login_path %></li>
+          <li><%= link_to "createQ", createQuestion_path %></li>
+          <li><%= link_to "allQ", questions_path %></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <div class="container main">
+    <%= yield %>
   </div>
-</header>
-<div class="container">
-  <%= yield %>
 </div>
 </body>
 </html>

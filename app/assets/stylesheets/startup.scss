@@ -5,11 +5,35 @@
 @import "bootstrap";
 
 body {
-  // Added a random placeholder image --- Change later FIXME
-  background: url("https://unsplash.it/1920/1080/?random") no-repeat;
-  background-size: 100%;
+
 }
 
-.home.content {
-  padding-top: 65px;
+.home.content  {
+  color:white;
+  text-align: center;
+
+
 }
+
+h1.top {
+  background: rgba(100, 100, 100, 0.3);
+  font-family: "Courier New", Courier, monospace;
+  font-weight: 300;
+  font-size: 50px;
+  color: #F7C1BB;
+  margin-left: 125px;
+  margin-right: 125px;
+}
+
+h1.bottom {
+  background: rgba(100, 100, 100, 0.3);
+  font-family: "Courier New", Courier, monospace;
+  font-weight: 300;
+  font-stretch: extra-expanded;
+  font-size: 50px;
+  color: #F7C1BB;
+  margin-top: 20%;
+  margin-left: 150px;
+  margin-right: 150px;
+}
+
