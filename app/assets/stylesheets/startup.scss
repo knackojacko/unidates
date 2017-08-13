@@ -1,3 +1,15 @@
 // Place all the styles related to the Startup controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+body {
+  // Added a random placeholder image --- Change later FIXME
+  background: url("https://unsplash.it/1920/1080/?random") no-repeat;
+  background-size: 100%;
+}
+
+.home.content {
+  padding-top: 65px;
+}

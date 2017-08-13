@@ -13,6 +13,18 @@
  *= require_tree .
  *= require_self
  */
+@import "bootstrap-sprockets";
+@import "bootstrap";
 
- @import "bootstrap-sprockets";
- @import "bootstrap";
+.navbar.transparent.navbar-inverse.navbar-fixed-top {
+  background: rgba(50, 50, 50, 0.25);
+  border: none; // Remove bootstrap border for cleaner navbar
+}
+
+.navbar-brand.logo {
+  color: white;
+}
+
+navbar.links {
+  color: white !important;
+}

@@ -1,16 +1,27 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>ProgrammingProject1</title>
-    <%= csrf_meta_tags %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
-
-  <body>
-    <div class="container">
-      <%= yield %>
-    </div>
-  </body>
+<head>
+  <title>UniDates</title>
+  <%= csrf_meta_tags %>
+  <%= stylesheet_link_tag 'application', media: 'all',
+                          'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+<body>
+<header class="navbar transparent navbar-inverse navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-brand logo">UniDates ❤</div>
+    <nav>
+      <ul class="nav navbar-nav navbar-right" style="color:white">
+        <li><%= link_to "Home", root_path %></li>
+        <li><%= link_to "Help", '#' %></li>
+        <li><%= link_to "Log in", '#' %></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<div class="container">
+  <%= yield %>
+</div>
+</body>
 </html>
