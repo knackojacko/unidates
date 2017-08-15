@@ -15,25 +15,20 @@ body {
 
 }
 
-h1.top {
-  background: rgba(100, 100, 100, 0.3);
-  font-family: "Courier New", Courier, monospace;
-  font-weight: 300;
-  font-size: 50px;
-  color: #F7C1BB;
-  margin-left: 125px;
-  margin-right: 125px;
+.top-buffer {
+  margin-top: 30vh;
 }
 
-h1.bottom {
+@media (max-width: 768px) {
+  h1.dynamic.custom{font-size: 25px !important;}
+  .container.text-center{margin-top: 15vh;}
+}
+
+h1.dynamic.custom{
   background: rgba(100, 100, 100, 0.3);
-  font-family: "Courier New", Courier, monospace;
-  font-weight: 300;
-  font-stretch: extra-expanded;
+  font-family: "Courier New", Courier, monospace !important;
+  font-weight: 300 !important;
   font-size: 50px;
-  color: #F7C1BB;
-  margin-top: 20%;
-  margin-left: 150px;
-  margin-right: 150px;
+  color: #F7C1BB !important;
 }
 

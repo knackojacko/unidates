@@ -16,20 +16,27 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-.mainbackground.image{
+@media (max-width: 768px) {
+  .mainbackground.image {
+    background: url("main_back.jpg") no-repeat center center fixed !important;
+  }
+}
+
+.mainbackground.image {
   // Link to resource for safety reasons
   //https://www.flickr.com/photos/noquedanfotos/5425846901/in/photostream/
   //-webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
   //filter: grayscale(100%);
   background: url("main_back.jpg") no-repeat;
-  background-size: 100%;
-  height: 100vh;
-  width: 100vw;
+  background-size: cover;
+  height: 100vh !important;
+  width: 100vw !important;
 }
+
 .navbar.transparent.navbar-inverse.navbar-fixed-top {
   background: rgba(50, 50, 50, 0.7);
   border: none; // Remove bootstrap border for cleaner navbar
-  color:white;
+  color: white;
   filter: none;
 }
 
@@ -38,13 +45,12 @@
 }
 
 .navbar-inverse .navbar-nav > li > a {
-  color:white;
+  color: white;
 }
 
 .navbar-inverse .navbar-nav > li > a:hover {
-  color:greenyellow !important;
+  color: greenyellow !important;
 }
-
 
 .container.main {
   padding-top: 8%;

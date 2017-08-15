@@ -1,30 +1,31 @@
 <% provide(:title, 'Sign up') %>
 <div class="loginbackbox">
   <h1>sign me up!</h1>
-  <table class = center>
+  <table class=center>
     <%= form_for(@user) do |f| %>
-        <tr>
-          <th><%= f.label :name, "name: ", class: "form label" %></th>
-          <th><%= f.text_field :name, class: "form field" %></th>
-        </tr>
+        <div class="form-group">
+          <tr>
+            <th><%= f.label :name, "name: ", class: "form label" %></th>
+            <th><%= f.text_field :name, class: "form field" %></th>
+          </tr>
 
-        <tr>
-          <th><%= f.label :email, "email: ", class: "form label" %></th>
-          <th><%= f.email_field :email, class: "form field" %></th>
-        </tr>
+          <tr>
+            <th><%= f.label :email, "email: ", class: "form label" %></th>
+            <th><%= f.email_field :email, class: "form field" %></th>
+          </tr>
 
-        <tr>
-          <th><%= f.label :password, "password: ", class: "form label" %></th>
-          <th><%= f.password_field :password, class: "form field" %></th>
-        </tr>
+          <tr>
+            <th><%= f.label :password, "password: ", class: "form label" %></th>
+            <th><%= f.password_field :password, class: "form field" %></th>
+          </tr>
 
+          <tr>
+            <th><%= f.label :password_confirmation, "confirmation: ", class: "form label" %></th>
+            <th></t><%= f.password_field :password_confirmation, class: "form field" %></th>
+          </tr>
+        </div>
         <tr>
-          <th><%= f.label :password_confirmation, "confirmation: ", class: "form label" %></th>
-          <th></t><%= f.password_field :password_confirmation, class: "form field" %></th>
-        </tr>
-
-        <tr>
-          <th colspan="2" class = "text-center"><%= f.submit "Create account", class: "btn btn-primary" %></th>
+          <th colspan="2" class="text-center"><%= f.submit "Create account", class: "btn btn-primary" %></th>
         </tr>
     <% end %>
   </table>
