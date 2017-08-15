@@ -1,21 +1,19 @@
-<head>
-  <title>UniDates</title>
-  <%= csrf_meta_tags %>
-  <%= stylesheet_link_tag 'application', media: 'all',
-                          'data-turbolinks-track': 'reload' %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-</head>
-<body class="mainbackground">
-<div class="mainbackground image">
   <header class="navbar transparent navbar-inverse navbar-fixed-top">
     <div class="container">
       <div class="navbar-brand logo">UniDates ❤</div>
-      <nav>
-        <ul class="nav navbar-nav navbar-right links">
+
+      <button class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <div class="collapse navbar-collapse navHeaderCollapse">
+        <ul class="nav navbar-nav navbar-right">
           <li><%= link_to "Home", root_path %></li>
           <li><%= link_to "Log In", login_path %></li>
           <li><%= link_to "Sign Up", signup_path %></li>
         </ul>
-      </nav>
+      </div>
     </div>
   </header>
