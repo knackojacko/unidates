@@ -1,11 +1,15 @@
 <% provide(:title, "Log in") %>
+<% provide(:button_text, "Log in")%>
 
-<%= form_for(:session, url: login_path) do |f| %>
-    <%= f.label :email %>
-    <%= f.email_field :email %>
+    <%= form_for(:session, url: login_path) do |f| %>
+        <div class="form-group">
+            <%= f.label :email %>
+            <%= f.email_field :email, class: 'form-control' %>
+        </div>
     
-    <%= f.label :password %>
-    <%= f.password_field :password %>
-    
-    <%= f.submit "Log in" %>
-<% end %>
+        <div class="form-group">
+            <%= f.label :password %>
+            <%= f.password_field :password, class: 'form-control' %>
+        </div>
+         <%= f.submit yield(:button_text), class: "btn btn-primary" %>
+    <% end %>

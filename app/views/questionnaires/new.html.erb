@@ -1,0 +1,70 @@
+
+<% provide(:button_text, 'Finish') %>
+
+ <%= form_for(@questionnaire) do |f| %>
+      
+      <div class="form-group">
+        <%= f.label :q1 %>
+        <%= f.radio_button(:q1, "answer1") %>
+        <%= f.radio_button(:q1, "answer2") %>
+      </div>
+    
+      <div class="form-group">
+        <%= f.label :q2 %>
+        <%= f.radio_button(:q2, "answer1") %>
+        <%= f.radio_button(:q2, "answer2") %>
+      </div>
+      
+      <div class="form-group">
+        <%= f.label :q3 %>
+        <%= f.radio_button(:q3, "answer1") %>
+        <%= f.radio_button(:q3, "answer2") %>
+      </div>
+      
+      <div class="form-group">
+        <%= f.label :q4 %>
+        <%= f.radio_button(:q4, "answer1") %>
+        <%= f.radio_button(:q4, "answer2") %>
+    </div>
+
+      <div class="form-group">
+        <%= f.label :q5 %>
+        <%= f.radio_button(:q5, "answer1") %>
+        <%= f.radio_button(:q5, "answer2") %>
+    </div>
+
+      <div class="form-group">
+        <%= f.label :q6 %>
+        <%= f.radio_button(:q6, "answer1") %>
+        <%= f.radio_button(:q6, "answer2") %>
+    </div>
+
+      <div class="form-group">
+        <%= f.label :q7 %>
+        <%= f.radio_button(:q7, "answer1") %>
+        <%= f.radio_button(:q7, "answer2") %>
+    </div>
+
+      <div class="form-group">
+        <%= f.label :q8 %>
+        <%= f.radio_button(:q8, "answer1") %>
+        <%= f.radio_button(:q8, "answer2") %>
+    </div>
+
+      <div class="form-group">
+        <%= f.label :q9 %>
+        <%= f.radio_button(:q9, "answer1") %>
+        <%= f.radio_button(:q9, "answer2") %>
+    </div>
+
+    <div class="form-group">
+        <%= f.label :q10 %>
+        <%= f.radio_button(:q10, "answer1") %>
+        <%= f.radio_button(:q10, "answer2") %>
+    </div>
+    
+    <%= f.hidden_field :user_id, :value => current_user.id%>
+    <%= f.submit yield(:button_text), class: "btn btn-primary" %>
+<% end %>
+
+

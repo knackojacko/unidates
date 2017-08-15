@@ -10,33 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170815034606) do
-
-  create_table "answers", force: :cascade do |t|
-    t.string "answer1"
-    t.string "answer2"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
+ActiveRecord::Schema.define(version: 20170815125557) do
 
   create_table "questionnaires", force: :cascade do |t|
-    t.integer "question_id"
-    t.integer "answer_id"
+    t.integer "user_id"
+    t.string "q1"
+    t.string "q2"
+    t.string "q3"
+    t.string "q4"
+    t.string "q5"
+    t.string "q6"
+    t.string "q7"
+    t.string "q8"
+    t.string "q9"
+    t.string "q10"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["answer_id"], name: "index_questionnaires_on_answer_id"
-    t.index ["question_id"], name: "index_questionnaires_on_question_id"
-  end
-
-  create_table "questions", force: :cascade do |t|
-    t.string "question"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "questonnaires", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_questionnaires_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -45,6 +35,7 @@ ActiveRecord::Schema.define(version: 20170815034606) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "password_digest"
+    t.index ["email"], name: "index_users_on_email", unique: true
   end
 
 end

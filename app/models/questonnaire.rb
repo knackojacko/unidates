@@ -1,2 +1,0 @@
-class Questonnaire < ApplicationRecord
-end
