@@ -1,0 +1,2 @@
+class Questonnaire < ApplicationRecord
+end

@@ -1,28 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>UniDates</title>
-  <%= csrf_meta_tags %>
-  <%= stylesheet_link_tag 'application', media: 'all',
-                          'data-turbolinks-track': 'reload' %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-</head>
-<body class="mainbackground">
-<div class="mainbackground image">
-  <header class="navbar transparent navbar-inverse navbar-fixed-top">
-    <div class="container">
-      <div class="navbar-brand logo">UniDates ❤</div>
-      <nav>
-        <ul class="nav navbar-nav navbar-right links">
-          <li><%= link_to "Home", root_path %></li>
-          <li><%= link_to "Log In", login_path %></li>
-          <li><%= link_to "Sign Up", signup_path %></li>
-          <li><%= link_to "createQ", createQuestion_path %></li>
-          <li><%= link_to "allQ", questions_path %></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+  <%= render partial: 'shared/nav' %>
   <div class="container main">
     <%= yield %>
   </div>
