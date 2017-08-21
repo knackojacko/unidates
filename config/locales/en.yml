@@ -30,4 +30,31 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  errors:
+    format: "%{message}"
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            name:
+              blank: First Name can't be blank
+              too_short: First Name is too short (minimum is 2 characters)
+              too_long: First Name is too long (maximum is 35 characters)
+            email:
+              blank: Email can't be blank
+              invalid: Email is not a valid RMIT student email
+              taken: Email has already been taken
+            age:
+              blank: Age can't be blank
+            gender:
+              blank: Gender can't be blank
+            preference:
+              blank: Preference can't be blank
+            password:
+              blank: Password can't be blank
+              too_short: Password is too short (minimum is 8 characters)
+              too_long: Password is too long (maximum is 35 characters)
+            password_confirmation:
+              blank: Password Confirmation can't be blank
+              confirmation: Password doesn't match confirmation
