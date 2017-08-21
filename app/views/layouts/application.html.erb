@@ -5,6 +5,9 @@
     <div class="mainbackground image">
         <%= render partial: 'shared/nav' %>
       <div class="container main">
+        <% flash.each do |message_type, message| %>
+          <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
+        <%end%>
         <%= yield %>
       </div>
     </div>

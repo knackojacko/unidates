@@ -11,6 +11,8 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
+      log_in @user
+      flash[:success] = "Welcome to UniDates!"
       redirect_to root_url
     else
       render 'new'
@@ -20,7 +22,7 @@ class UsersController < ApplicationController
   private
   
   def user_params
-    params.require(:user).permit(:name, :email, :age, :gender, :preference, 
+    params.require(:user).permit(:name, :email, :dob, :gender, :preference, 
       :password, :password_confirmation)
   end
   

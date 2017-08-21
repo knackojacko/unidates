@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 20170815125557) do
     t.string "email"
     t.string "gender"
     t.string "preference"
-    t.integer "age"
+    t.date "dob"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "password_digest"
