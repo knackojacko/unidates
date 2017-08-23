@@ -7,3 +7,4 @@ class QuestionnairesTest < ApplicationSystemTestCase
   #   assert_selector "h1", text: "Questionnaire"
   # end
 end
+
