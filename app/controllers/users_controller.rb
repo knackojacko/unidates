@@ -11,9 +11,8 @@ class UsersController < ApplicationController
     def create
         @user = User.new(user_params)
         if @user.save
-            SendEmailJob.set(wait: 20.seconds).perform_later(@user)
-            log_in @user
-            flash[:success] = "Welcome to UniDates!"
+            NewUserEmailMailer.notify_user(@user).deliver
+            flash[:success] = "Check your email!"
             redirect_to root_url
         else
             render 'new'
