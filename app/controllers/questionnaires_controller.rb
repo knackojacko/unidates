@@ -3,7 +3,7 @@ class QuestionnairesController < ApplicationController
 
 
   def index
-    @questionnaires = Questionnaire.all
+    @questionnaire = Questionnaire.all
   end
 
 
@@ -22,8 +22,8 @@ class QuestionnairesController < ApplicationController
 
 
   def create
+
     @questionnaire = Questionnaire.new(questionnaire_params)
-    
     
     if @questionnaire.save
       redirect_to @questionnaire
