@@ -1,14 +1,14 @@
-<%if @user %>
-  <% if @user.errors.any? %>
-    <div id="error_explanation" class="col-md-12">
-      <div class="alert alert-danger" role="alert">
-        The form contains <%= pluralize(@user.errors.count, "error") %>.
-      </div>
-      <ul>
-        <% @user.errors.each do |attr, msg| %>
-        <li>*<%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+<% if @user %>
+    <% if @user.errors.any? %>
+          <div id="error_explanation" class="col-md-12">
+            <div class="alert alert-danger" role="alert">
+              Oh no! There is an error with your information.
+            </div>
+            <table class="table table-striped">
+              <% @user.errors.each do |attr, msg| %>
+                  <tr><td><%= msg %></td></tr>
+              <% end %>
+            </table>
+          </div>
+    <% end %>
 <% end %>
