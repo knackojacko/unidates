@@ -1,43 +1,50 @@
 <% provide(:title, 'Sign up') %>
 <% provide(:button_text, 'Continue') %>
 
-  <%= form_for(@user) do |f| %>
-    <%= render 'shared/error_messages', object: @user %>
-    <div class="form-group">
-      <%= f.label :name, 'First Name' %>
-      <%= f.text_field :name, class: 'form-control' %>
-    </div>
-  
-    <div class="form-group">
-      <%= f.label :email, 'Student Email' %>
-      <%= f.email_field :email, class: 'form-control' %>
-    </div>
-    
-    <div class="form-group">
-      <%= f.label :dob, 'Birthday' %>
-      <%= f.date_select :dob, include_blank: true, :order => [ :day, :month, :year ], :start_year => 2017, :end_year => 1905, class: 'dob' %>
-     </div>
+<div class="row">
+  <div class="col-lg-3"></div>
+  <div class="container col-lg-6">
+    <div class="container fogtest">
+      <%= form_for(@user) do |f| %>
+          <%= render 'shared/error_messages', object: @user %>
+          <div class="form-group">
+            <%= f.label :name, 'First Name' %>
+            <%= f.text_field :name, class: 'form-control' %>
+          </div>
 
-    <div class="form-group">
-      <%= f.label :gender, 'Gender' %>
-      <%= f.select(:gender, [ 'Man', 'Woman' ], {:prompt => 'I am a...'}, {:class => 'form-control'}) %>
-    </div>
+          <div class="form-group">
+            <%= f.label :email, 'Student Email' %>
+            <%= f.email_field :email, class: 'form-control' %>
+          </div>
 
-    <div class="form-group">
-      <%= f.label :preference, 'Preference' %>
-      <%= f.select(:preference, [ 'Men', 'Women', 'Both' ], {:prompt => 'Show me...'}, {:class => 'form-control'}) %>
-    </div>
-    
-    <div class="form-group">
-      <%= f.label :password, 'Create a password' %>
-      <%= f.password_field :password, class: 'form-control' %>
-    </div>
-    
-    <div class="form-group">
-      <%= f.label :password_confirmation, 'Confirm your password' %>
-      <%= f.password_field :password_confirmation, class: 'form-control' %>
-    </div>
-    
-  <%= f.submit yield(:button_text), class: "btn btn-primary" %>
-<% end %>
+          <div class="form-group">
+            <%= f.label :dob, 'Birthday' %>
+            <%= f.date_select :dob, include_blank: true, :order => [:day, :month, :year], :start_year => 2017, :end_year => 1905, class: 'dob' %>
+          </div>
 
+          <div class="form-group">
+            <%= f.label :gender, 'Gender' %>
+            <%= f.select(:gender, ['Man', 'Woman'], {:prompt => 'I am a...'}, {:class => 'form-control'}) %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :preference, 'Preference' %>
+            <%= f.select(:preference, ['Men', 'Women', 'Both'], {:prompt => 'Show me...'}, {:class => 'form-control'}) %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :password, 'Create a password' %>
+            <%= f.password_field :password, class: 'form-control' %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :password_confirmation, 'Confirm your password' %>
+            <%= f.password_field :password_confirmation, class: 'form-control' %>
+          </div>
+
+          <%= f.submit yield(:button_text), class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+  <div class="col-lg-3"></div>
+</div>
