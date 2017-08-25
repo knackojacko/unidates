@@ -5,62 +5,62 @@
       
       <div class="form-group">
         <%= f.label :q1 %>
-        <%= f.radio_button(:q1, "answer1") %>
-        <%= f.radio_button(:q1, "answer2") %>
+        <p> Cat <%= f.radio_button(:q1, "Cat") %>  
+            Dog <%= f.radio_button(:q1, "Dog") %></p>
       </div>
     
       <div class="form-group">
         <%= f.label :q2 %>
-        <%= f.radio_button(:q2, "answer1") %>
-        <%= f.radio_button(:q2, "answer2") %>
+        <p> Fox <%= f.radio_button(:q2, "Fox") %>
+            Mouse <%= f.radio_button(:q2, "Mouse") %></p>
       </div>
       
       <div class="form-group">
         <%= f.label :q3 %>
-        <%= f.radio_button(:q3, "answer1") %>
-        <%= f.radio_button(:q3, "answer2") %>
+        <p>Linking <%= f.radio_button(:q3, "Linking") %>
+           Billy <%= f.radio_button(:q3, "Billy") %></p>
       </div>
       
       <div class="form-group">
         <%= f.label :q4 %>
-        <%= f.radio_button(:q4, "answer1") %>
-        <%= f.radio_button(:q4, "answer2") %>
+        <p> Apples <%= f.radio_button(:q4, "Apples") %>
+            Orange <%= f.radio_button(:q4, "Orange") %></p>
     </div>
 
       <div class="form-group">
         <%= f.label :q5 %>
-        <%= f.radio_button(:q5, "answer1") %>
-        <%= f.radio_button(:q5, "answer2") %>
+        <p> Whine <%= f.radio_button(:q5, "Whine") %>
+            Soda <%= f.radio_button(:q5, "Soda") %></p>
     </div>
 
       <div class="form-group">
         <%= f.label :q6 %>
-        <%= f.radio_button(:q6, "answer1") %>
-        <%= f.radio_button(:q6, "answer2") %>
+        <p> Run <%= f.radio_button(:q6, "Run") %>
+            Walk <%= f.radio_button(:q6, "Walk") %></p>
     </div>
 
       <div class="form-group">
         <%= f.label :q7 %>
-        <%= f.radio_button(:q7, "answer1") %>
-        <%= f.radio_button(:q7, "answer2") %>
+        <p> Meat <%= f.radio_button(:q7, "Meat") %>
+            Fruit <%= f.radio_button(:q7, "Fruit") %></p>
     </div>
 
       <div class="form-group">
         <%= f.label :q8 %>
-        <%= f.radio_button(:q8, "answer1") %>
-        <%= f.radio_button(:q8, "answer2") %>
+        <p> Mince <%= f.radio_button(:q8, "Mince") %>
+            Whole <%= f.radio_button(:q8, "Whole") %></p>
     </div>
 
       <div class="form-group">
         <%= f.label :q9 %>
-        <%= f.radio_button(:q9, "answer1") %>
-        <%= f.radio_button(:q9, "answer2") %>
+        <p> House <%= f.radio_button(:q9, "House") %>
+            Apartment <%= f.radio_button(:q9, "Apartment") %></p>
     </div>
 
     <div class="form-group">
         <%= f.label :q10 %>
-        <%= f.radio_button(:q10, "answer1") %>
-        <%= f.radio_button(:q10, "answer2") %>
+        <p> School <%= f.radio_button(:q10, "School") %>
+            Uni <%= f.radio_button(:q10, "Uni") %></p>
     </div>
     
     <%= f.hidden_field :user_id, :value => current_user.id%>
