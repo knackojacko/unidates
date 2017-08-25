@@ -1,0 +1,70 @@
+<% if current_user.preference == 'Men' %>
+    <%users = get_all_males %>
+<% elsif current_user.preference == 'Women' %>
+    <% users = get_all_females %>
+<% else %>
+    <% users = get_all_users %>
+<%end%>
+
+<% matched_users = Hash.new %>
+
+<h3>Your matches </h3>
+<% users.each do |user| %>
+    <% count = 0 %>
+    
+    <% user.questionnaire.each do |other_questionnaire| %>
+        
+        <% current_user.questionnaire.each do |user_questionnaire|%>
+        
+            <% if user_questionnaire.q1 == other_questionnaire.q1 %>
+                <% count += 1 %>
+            <%end%>
+
+            <% if user_questionnaire.q2 == other_questionnaire.q2 %>
+                <% count += 1 %>
+            <%end%>
+
+            <% if user_questionnaire.q3 == other_questionnaire.q3 %>
+                <% count += 1 %>
+            <%end%>
+            
+            <% if user_questionnaire.q4 == other_questionnaire.q4 %>
+                <% count += 1 %>
+            <%end%>
+
+            <% if user_questionnaire.q5 == other_questionnaire.q5 %>
+                <% count += 1 %>
+            <%end%>
+
+            <% if user_questionnaire.q6 == other_questionnaire.q6 %>
+                <% count += 1 %>
+            <%end%>
+
+            <% if user_questionnaire.q7 == other_questionnaire.q7 %>
+                <% count += 1 %>
+            <%end%>
+
+            <% if user_questionnaire.q8 == other_questionnaire.q8 %>
+                <% count += 1 %>
+            <%end%>
+
+            <% if user_questionnaire.q9 == other_questionnaire.q9 %>
+                <% count += 1 %>
+            <%end%>
+
+            <% if user_questionnaire.q10 == other_questionnaire.q10 %>
+                <% count += 1 %>
+            <%end%>
+            
+        <%end%>
+        
+    <%end%>
+    <%=user.name%>
+    <p>Matched percentage: <%= count%></p>
+<%end%>
+
+
+
+
+    
+    
