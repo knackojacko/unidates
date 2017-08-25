@@ -1,7 +1,6 @@
 class CreateQuestionnaires < ActiveRecord::Migration[5.1]
   def change
     create_table :questionnaires do |t|
-      t.references :user, foreign_key: true
       t.string :q1
       t.string :q2
       t.string :q3

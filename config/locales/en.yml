@@ -45,8 +45,8 @@ en:
               blank: Email can't be blank
               invalid: Email is not a valid RMIT student email
               taken: Email has already been taken
-            age:
-              blank: Age can't be blank
+            dob:
+              blank: Birthday can't be blank
             gender:
               blank: Gender can't be blank
             preference:

@@ -1,3 +1,17 @@
 <%= @user.name %>, <%= @user.email %>
 <%= @user.dob %>, <%= @user.gender %>
 <%= @user.preference %>
+
+<% @user.questionnaire.each do |questionnaire| %>
+    <%= questionnaire.q1 %>
+    <%= questionnaire.q2 %>
+    <%= questionnaire.q3 %>
+    <%= questionnaire.q4 %>
+    <%= questionnaire.q5 %>
+    <%= questionnaire.q6 %>
+    <%= questionnaire.q7 %>
+    <%= questionnaire.q8 %>
+    <%= questionnaire.q9 %>
+    <%= questionnaire.q10 %>
+<%end%>
+

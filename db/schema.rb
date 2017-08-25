@@ -10,10 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170815125557) do
+ActiveRecord::Schema.define(version: 20170824124251) do
 
   create_table "questionnaires", force: :cascade do |t|
-    t.integer "user_id"
     t.string "q1"
     t.string "q2"
     t.string "q3"
@@ -26,7 +25,7 @@ ActiveRecord::Schema.define(version: 20170815125557) do
     t.string "q10"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_questionnaires_on_user_id"
+    t.integer "user_id"
   end
 
   create_table "users", force: :cascade do |t|
