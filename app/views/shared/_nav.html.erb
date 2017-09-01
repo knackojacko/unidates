@@ -11,7 +11,13 @@
         <ul class="nav navbar-nav navbar-right">
           <li><%= link_to "Home", root_path %></li>
           <% if logged_in? %>
-            <li><%= link_to "Preferences", new_questionnaire_path %></li>
+            <% if current_user.questionnaire.blank? %>
+              <li><%= link_to "Preferences", new_questionnaire_path %></li>
+            <%else  %>
+              <li><%= link_to "Update Preferences", edit_questionnaire_path(current_user.questionnaire.ids) %></li>
+
+            <%end%>
+            <li><%= link_to "Matched Users", questionnaires_path %></li>
             <li><%= link_to "Profile", current_user %></li>
             <li><%= link_to "Log Out", logout_path, method: :delete %></li>
           <% else %>
