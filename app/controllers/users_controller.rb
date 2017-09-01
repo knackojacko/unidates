@@ -15,6 +15,7 @@ class UsersController < ApplicationController
     def create
         @user = User.new(user_params)
         if @user.save
+            log_in @user
             NewUserEmailMailer.notify_user(@user).deliver
             flash[:success] = "Check your email!"
             redirect_to root_url

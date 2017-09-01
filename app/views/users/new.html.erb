@@ -8,7 +8,7 @@
       <div class="container glass-back">
         <div class="custom-form">
           <h2 style="text-align: center">Sign Up</h2>
-          <%= form_for(@user) do |f| %>
+          <%= form_for(@user, url: signup_path) do |f| %>
               <%= render 'shared/error_messages', object: @user %>
               <div class="form-group inline-block">
                 <%= f.text_field :name, placeholder: 'what do they call you?', class: 'form-control custom' %>
