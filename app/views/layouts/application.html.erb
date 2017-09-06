@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html>
   <%= render partial: 'shared/head' %>
-  <body class="mainbackground">
-    <div class="mainbackground image">
-        <%= render partial: 'shared/nav' %>
+  <body>
+        <% if logged_in? && current_user.is_admin? %>
+          <%= render partial: 'shared/admin' %>          
+        <% else %>
+          <%= render partial: 'shared/nav' %>
+        <%end%>
       <div class="container main">
         <% flash.each do |message_type, message| %>
           <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
         <%end%>
         <%= yield %>
       </div>
-    </div>
   </body>
 </html>
