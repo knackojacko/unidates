@@ -1,0 +1,5 @@
+<% reported_user = find_user(@report.reported_user_id) %>
+
+<%= @report.name %> <%= @report.email %>
+<p> reported user: <%= reported_user.name %> <%= reported_user.email %></p>
+<%= @report.problem %>

@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   resources :quest
   resources :users
   resources :questionnaires
-
+  resources :reports
 
 
 end

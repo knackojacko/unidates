@@ -1,6 +1,6 @@
 module UsersHelper
     def get_all_users
-        User.where.not(id: current_user.id)
+        User.where.not(id: current_user.id).where.not(is_admin: true)
     end
 
     def get_all_males
@@ -9,6 +9,10 @@ module UsersHelper
 
     def get_all_females
         User.where.not(id: current_user.id).where(gender: 'Woman')
+    end
+    
+    def find_user(reported_user_id)
+        User.find(reported_user_id)
     end
     
     def get_user_preferences
