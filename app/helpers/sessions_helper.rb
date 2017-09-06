@@ -5,22 +5,40 @@ module SessionsHelper
     end
     
     #return current loggin-in user
-  def current_user
-    if (user_id = session[:user_id])
-      @current_user ||= User.find_by(id: user_id)
+    def current_user
+        if (user_id = session[:user_id])
+            @current_user ||= User.find_by(id: user_id)
+        end
     end
-  end
+
+    def current_user?(user)
+        user == current_user
+    end
     
     def logged_in?
         !current_user.nil?
     end
 
     def log_out
-        forget(current_user)
         session.delete(:user_id)
         @current_user = nil
     end
+
+    def store_location
+        session[:forwarding_url] = request.original_url if request.get?
+    end
+
+    def logged_in_user
+      unless logged_in?
+        store_location
+        flash[:danger] = "Please log in."
+        redirect_to login_url
+      end
+    end
     
-    
-    
+    def correct_user
+      @user = User.find(params[:id])
+      redirect_to(root_url) unless current_user?(@user)
+    end
+
 end
