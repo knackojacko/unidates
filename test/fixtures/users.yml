@@ -4,3 +4,4 @@ michael:
   name: Michael Example
   email: s3555241@student.rmit.edu.au
   password_digest: <%= User.digest('password') %>
+  

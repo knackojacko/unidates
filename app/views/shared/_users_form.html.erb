@@ -1,15 +1,10 @@
-<% provide(:title, 'Sign up') %>
-<% provide(:button_text, 'Join') %>
-
-<div class="container">
-  <div class="row">
-    <%= form_for(@user) do |f| %>
+<%= form_for(@user) do |f| %>
         <div class="col-xs-3"></div>
         <div class="col-xs-6">
           <div class="container glass-back">
             <div class="custom-form">
               <h2 style="text-align: center; color: silver!important;;">Come and Study!</h2>
-              <div class="form-group inline-block">
+              <div class="form-group">
                 <%= f.text_field :name, placeholder: 'what do they call you?', class: 'form-control custom' %>
               </div>
 
@@ -18,7 +13,7 @@
               </div>
 
               <div class="form-group">
-                <%= f.label :dob, 'when were you born?', class: 'form-control custom-label' %>
+                <%= f.label :dob, 'when were you created?', class: 'form-control custom-label' %>
                 <%= f.date_select :dob, {:order => [:day, :month, :year], default: 18.years.ago, :start_year => 2017, :end_year => 1905}, {:class => 'form-control custom-select'} %>
               </div>
 
@@ -27,7 +22,7 @@
               </div>
 
               <div class="form-group">
-                <%= f.select(:preference, ['Men', 'Women', 'Both'], {:prompt => 'I\'m interested in:'}, {:class => 'form-control custom'}) %>
+                <%= f.select(:preference, ['Men', 'Women', 'Both'], {:prompt => 'i\'m interested in:'}, {:class => 'form-control custom'}) %>
               </div>
 
               <div class="form-group">
@@ -35,7 +30,7 @@
               </div>
 
               <div class="form-group">
-                <%= f.password_field :password_confirmation, placeholder: 'confirm password', class: 'form-control custom' %>
+                <%= f.password_field :password_confirmation, placeholder: 'password confirm', class: 'form-control custom' %>
               </div>
 
               <%= f.submit yield(:button_text), class: 'btn btn-block btn-success' %>
@@ -44,6 +39,3 @@
         </div>
         <div class="col-xs-3"><%= render 'shared/error_messages', object: @user %></div>
     <% end %>
-    <%= render partial: 'shared/users_form' %>
-  </div>
-</div>

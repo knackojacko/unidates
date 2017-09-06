@@ -2,22 +2,14 @@
     <p>Please fill out your preferences first!</p>
 <%else %>
 
-    <% if current_user.preference == 'Men' %>
-        <%users = get_all_males %>
-    <% elsif current_user.preference == 'Women' %>
-        <% users = get_all_females %>
-    <% else %>
-        <% users = get_all_users %>
-    <%end%>
+    <%users = get_user_preferences %>
 
     <% matched_users = Hash.new { |hash, key| hash[key] = {} } %>
-
-    <h3>Your matches </h3>
+    
     <% users.each_with_index do |user,index| %>
         <% count = 0 %>
     
         <% user.questionnaire.each do |other_questionnaire| %>
-        
             <% current_user.questionnaire.each do |user_questionnaire|%>
         
                 <% if user_questionnaire.q1 == other_questionnaire.q1 %>
@@ -59,9 +51,7 @@
                 <% if user_questionnaire.q10 == other_questionnaire.q10 %>
                     <% count += 1 %>
                 <%end%>
-            
             <%end%>
-        
         <%end%>
     
         <% matched_users[index][:name] = user.name %>
@@ -73,11 +63,9 @@
     <%end%>
 
     <% orderd_users = matched_users.sort_by { |k, v| v[:count]}.reverse  %>
-
+    <h3>Your matches </h3>
     <% orderd_users.each do |key, user| %>
-        <p><%= user[:name] %>, <%= user[:dob] %>, <%= user[:gender] %></p>
-        <p>Percentage matched: <%= user[:count] %></p>
-        </br>
+        <%= render :partial => 'shared/display_user', :locals => {:user => user, :key => key}%>
     <% end %>
 <%end%>
 

@@ -16,13 +16,7 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-@media (max-width: 768px) {
-  .mainbackground.image {
-    background: url("main_back.jpg") no-repeat center center fixed !important;
-  }
-}
-
-.mainbackground.image {
+body {
   // Link to resource for safety reasons
   //https://www.flickr.com/photos/noquedanfotos/5425846901/in/photostream/
   //-webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */

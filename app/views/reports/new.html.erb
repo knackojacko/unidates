@@ -1,0 +1,36 @@
+<% provide(:title, 'Report') %>
+<% provide(:button_text, 'Submit') %>
+
+
+
+<%= form_for(@report) do |f| %>
+
+    <div class="form-group">
+      <%= f.label :Name %>
+      <%= f.text_field :name,class: 'form-control', value: current_user.name %>
+    </div>
+    
+    <div class="form-group">
+        <%= f.label :Email %>
+        <%= f.email_field :email, class: 'form-control', value: current_user.email %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label "User" %><br />
+      <%= f.collection_select :reported_user_id, get_all_users, :id, :name do |b| %>
+        <div class="collection-check-box">
+        <%= b.selectx %>
+        <%= b.label %>
+      </div>
+      <%end%>
+    </div>
+    
+    <div class="form-group">
+      <%= f.label :Problem %>
+      <%= f.text_field :problem, class: 'form-control' %>
+    </div>
+    
+    <%= f.hidden_field :user_id, :value => current_user.id%>
+    <%= f.submit yield(:button_text), class: "btn btn-primary" %>
+
+<% end %>

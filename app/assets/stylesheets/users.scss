@@ -6,9 +6,10 @@
 .container.glass-back {
   background: inherit;
   width: 450px;
-  height: 600px;
+  height: auto;
   position: absolute;
   padding-top: 10px;
+  padding-bottom: 25px;
   overflow: hidden;
 
   border-radius: 5%;
