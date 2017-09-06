@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html>
   <%= render partial: 'shared/head' %>
-  <body class="mainbackground">
-    <div class="mainbackground image">
+  <body>
         <% if logged_in? && current_user.is_admin? %>
           <%= render partial: 'shared/admin' %>          
         <% else %>
@@ -14,6 +13,5 @@
         <%end%>
         <%= yield %>
       </div>
-    </div>
   </body>
 </html>
