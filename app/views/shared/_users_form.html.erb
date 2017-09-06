@@ -13,7 +13,7 @@
               </div>
 
               <div class="form-group">
-                <%= f.label :dob, 'when were you created?', class: 'form-control custom-label' %>
+                <%= f.label :dob, 'when were you born?', class: 'form-control custom-label' %>
                 <%= f.date_select :dob, {:order => [:day, :month, :year], default: 18.years.ago, :start_year => 2017, :end_year => 1905}, {:class => 'form-control custom-select'} %>
               </div>
 
