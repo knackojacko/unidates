@@ -2,6 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+/* -------------------- START: SIGN UP / LOG IN PAGES ----------------------- */
 .container.glass-back {
   background: inherit;
   width: 450px;
@@ -94,7 +95,10 @@
 .field_with_errors .form-control{
   color: inherit !important;
 }
+/* --------------------- END: SIGN UP / LOG IN PAGES ------------------------ */
 
+
+/* ---------------------- START: USER PROFILE PAGE -------------------------- */
 .white-box {
     position: relative;
     margin-top:20px;
@@ -135,3 +139,4 @@
     width: 100px;
     height: 100px;
 }
+/* ----------------------- END: USER PROFILE PAGE --------------------------- */
