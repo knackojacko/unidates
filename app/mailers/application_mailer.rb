@@ -1,5 +1,5 @@
 class ApplicationMailer < ActionMailer::Base
-    default from: 'unidates.notifications@gmail.com'
+    default from: 'unidatessend@gmail.com'
     layout 'mailer'
 end
 

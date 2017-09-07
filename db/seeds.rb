@@ -31,9 +31,11 @@ User.create(name: "Sui", email: "s7777777@student.rmit.edu.au", gender: "Woman",
 User.create(name: "Rocky", email: "s8888888@student.rmit.edu.au", gender: "Man", 
     preference: "Men", dob: "1998-04-11", password: "12345678", password_confirmation: "12345678"  )
     
+
 admin = User.new({name: 'admin', email: 'admin@rmit.edu.au', password: 'password', password_confirmation: 'password'  });
 admin.is_admin = true;
 admin.save(validate: false);
+
 
 =begin #NEEDS NEW SEEDING
 Questionnaire.create(q1:'Cat', q2:'Art', q3:'Drinks', q4:'iPhone', q5:'Books', q6:'Bali', q7:'Coffee At A Cafe', q8:'Board Games', q9:'Walk on the Beach', q10:'Building 80 Elevators', user_id: 1 )
