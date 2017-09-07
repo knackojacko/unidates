@@ -35,17 +35,16 @@ User.create(name: "Rocky", email: "s8888888@student.rmit.edu.au", gender: "Man",
 admin = User.new({name: 'admin', email: 'admin@rmit.edu.au', password: 'password', password_confirmation: 'password'  });
 admin.is_admin = true;
 admin.save(validate: false);
-    
-    
 
-    
-Questionnaire.create(q1:'Cat', q2:'Art', q3:'Drinks', q4:'Iphone', q5:'Books', q6:'Bali', q7:'Cafe', q8:'Board_Games', q9:'Walk_on_beach', q10:'Building_80_elevators', user_id: 1 )
-Questionnaire.create(q1:'Dog', q2:'Art', q3:'Drinks', q4:'Iphone', q5:'Books', q6:'Bali', q7:'Cafe', q8:'Board_Games', q9:'Walk_on_beach', q10:'Building_80_elevators', user_id: 2 )
-Questionnaire.create(q1:'Cat', q2:'Sport', q3:'Drinks', q4:'Iphone', q5:'Books', q6:'Bali', q7:'Cafe', q8:'Board_Games', q9:'Walk_on_beach', q10:'Building_80_elevators', user_id: 3 )
-Questionnaire.create(q1:'Dog', q2:'Art', q3:'Clubbing', q4:'Iphone', q5:'Books', q6:'Bali', q7:'Cafe', q8:'Video_Games', q9:'Walk_on_beach', q10:'Building_80_elevators', user_id: 4 )
 
-Questionnaire.create(q1:'Cat', q2:'Sport', q3:'Clubbing', q4:'Android', q5:'Movies', q6:'Paris', q7:'Restaurant', q8:'Video_Games', q9:'Walk_in_park', q10:'Building_80_escalators', user_id: 5 )
-Questionnaire.create(q1:'Dog', q2:'Art', q3:'Clubbing', q4:'Android', q5:'Movies', q6:'Paris', q7:'Restaurant', q8:'Video_Games', q9:'Walk_in_park', q10:'Building_80_escalators', user_id: 6 )
-Questionnaire.create(q1:'Dog', q2:'Art', q3:'Clubbing', q4:'Android', q5:'Movies', q6:'Paris', q7:'Restaurant', q8:'Video_Games', q9:'Walk_in_park', q10:'Building_80_escalators', user_id: 7 )
-Questionnaire.create(q1:'Cat', q2:'Sport', q3:'Clubbing', q4:'Android', q5:'Movies', q6:'Paris', q7:'Restaurant', q8:'Video_Games', q9:'Walk_in_park', q10:'Building_80_escalators', user_id: 8 )
+=begin #NEEDS NEW SEEDING
+Questionnaire.create(q1:'Cat', q2:'Art', q3:'Drinks', q4:'iPhone', q5:'Books', q6:'Bali', q7:'Coffee At A Cafe', q8:'Board Games', q9:'Walk on the Beach', q10:'Building 80 Elevators', user_id: 1 )
+Questionnaire.create(q1:'Dog', q2:'Art', q3:'Drinks', q4:'iPhone', q5:'Books', q6:'Bali', q7:'Coffee At A Cafe', q8:'Board Games', q9:'Walk on the Beach', q10:'Building 80 Elevators', user_id: 2 )
+Questionnaire.create(q1:'Cat', q2:'Sport', q3:'Drinks at a Bar', q4:'iPhone', q5:'Books', q6:'Bali', q7:'Coffee At A Cafe', q8:'Board Games', q9:'Walk on the Beach', q10:'Building 80 Elevators', user_id: 3 )
+Questionnaire.create(q1:'Dog', q2:'Art', q3:'Night Out Clubbing', q4:'iPhone', q5:'Books', q6:'Bali', q7:'Coffee At A Cafe', q8:'Video Games', q9:'Walk on the Beach', q10:'Building 80 Elevators', user_id: 4 )
 
+Questionnaire.create(q1:'Cat', q2:'Sport', q3:'Night Out Clubbing', q4:'Android', q5:'Movies', q6:'Paris', q7:'Restaurant', q8:'Video Games', q9:'Walk In The Park', q10:'Building 8 Escalators', user_id: 5 )
+Questionnaire.create(q1:'Dog', q2:'Art', q3:'Night Out Clubbing', q4:'Android', q5:'Movies', q6:'Paris', q7:'Restaurant', q8:'Video Games', q9:'Walk In The Park', q10:'Building 8 Escalators', user_id: 6 )
+Questionnaire.create(q1:'Dog', q2:'Art', q3:'Night Out Clubbing', q4:'Android', q5:'Movies', q6:'Paris', q7:'Restaurant', q8:'Video Games', q9:'Walk In The Park', q10:'Building 8 Escalators', user_id: 7 )
+Questionnaire.create(q1:'Cat', q2:'Sport', q3:'Night Out Clubbing', q4:'Android', q5:'Movies', q6:'Paris', q7:'Restaurant', q8:'Video Games', q9:'Walk In The Park', q10:'Building 8 Escalators', user_id: 8 )
+=end

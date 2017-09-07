@@ -2,7 +2,7 @@
     <% if @user.errors.any? %>
           <div id="error_explanation" class="col-md-12">
             <div class="alert alert-danger" role="alert">
-              Oh no! There is an error with your information.
+              Oh shucks! Please fix <%= pluralize(@user.errors.count, "error") %> associated with your information:
             </div>
             <table class="table table-striped">
               <% @user.errors.each do |attr, msg| %>
