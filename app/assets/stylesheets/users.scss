@@ -80,6 +80,18 @@
   -webkit-appearance: none;
 }
 
+.form-control.custom.non-editable {
+  user-select: none;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -o-user-select: none;
+}
+
+.form-control.custom[readonly] {
+  background-color: transparent;
+}
+
 .form-control.custom-label {
   width: 100%;
   margin-bottom: -5%;
