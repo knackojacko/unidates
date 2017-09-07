@@ -1,51 +1,31 @@
 <% provide(:title, 'Report User') %>
 <% provide(:button_text, 'Submit') %>
 
-<%= form_for(@report) do |f| %>
-<div class="container">
-    <div class="row">
-        <div class="col-xs-3"></div>
-        <div class="col-xs-6">
-            <div class="container glass-back">
-              <div class="custom-form">
-                <h2 style="text-align: center; color: silver!important;;">Report User</h2>
-                
-                <h3>Your Details:</h3>
-                <div class="form-group">
-                  <%= f.label :Name, 'your name', class: 'form-control custom-label' %>
-                  <%= f.text_field :name,class: 'form-control custom', value: current_user.name %>
-                </div>
-                
-                <div class="form-group">
-                    <%= f.label :Email, 'your email', class: 'form-control custom-label' %>
-                    <%= f.email_field :email, class: 'form-control custom', value: current_user.email %>
-                </div>
-                
-                <br>
-                
-                <h3>Their Details:</h3>
-                <div class="form-group">
-                  <%= f.label "User", 'their name', class: 'form-control custom-label' %>
-                  <%= f.collection_select :reported_user_id, get_all_users, :id, :name do |b| %>
-                    <%= b.select :user %>
-                  <%end%>
-                </div>
-                
-                <div class="form-group">
-                  <%= f.label :Reason, 'reason', class: 'form-control custom-label' %>
-                  <%= f.text_area :problem, class: 'form-control custom-textarea' %>
-                </div>
-                
-                <%= f.hidden_field :user_id, :value => current_user.id %>
-                <%= f.submit yield(:button_text), class: 'btn btn-block btn-success' %>
-              </div>
-              
-            </div>
-        </div>
+<div class="container-fluid" style="padding-bottom: 50px;">
+  <div class="row">
+    <div class="col-sm-3"></div>
+    <div class="col-sm-6 col-xs-12" align="center">
+      <%= render 'shared/error_messages', object: @user %>
     </div>
+    <div class="col-sm-3"></div>
+  </div>
+  <div class="row">
+    <div class="col-sm-3"></div>
+
+    <div class="col-sm-6 col-xs-12" align="center">
+      <div class="container custom signup">
+
+        <div class="glass-back"></div>
+
+        <div class="content" style="position:relative;">
+
+          <%= render partial: 'shared/report_form' %>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="col-sm-3">
+    </div>
+  </div>
 </div>
-
-
-<div class="col-xs-3"><%= render 'shared/error_messages', object: @user %></div>
-
-<% end %>
