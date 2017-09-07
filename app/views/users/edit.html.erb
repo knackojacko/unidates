@@ -1,8 +1,30 @@
 <% provide(:title, 'Update profile') %>
 <% provide(:button_text, 'Update') %>
 
-<div class="container">
+<div class="container-fluid" style="padding-bottom: 50px;">
   <div class="row">
-    <%= render partial: 'shared/users_form' %>
+    <div class="col-sm-3"></div>
+    <div class="col-sm-6 col-xs-12" align="center">
+      <%= render 'shared/error_messages', object: @user %>
+    </div>
+    <div class="col-sm-3"></div>
+  </div>
+  <div class="row">
+    <div class="col-sm-3"></div>
+
+    <div class="col-sm-6 col-xs-12" align="center">
+      <div class="container custom signup">
+
+        <div class="glass-back"></div>
+
+        <div class="content" style="position:relative;">
+          <%= render partial: 'shared/users_form' %>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="col-sm-3">
+    </div>
   </div>
 </div>
