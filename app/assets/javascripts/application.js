@@ -18,7 +18,7 @@
 //= require_tree .
 
 //START FILE
-$(document).ready(function() {
+$( document ).on('turbolinks:load', function() {
 
 /* -------------------------- START: PROFILE PAGE --------------------------- */
     $("#profileImage").click(function(e) {

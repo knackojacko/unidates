@@ -1,5 +1,3 @@
-        
-
         <%
         preferences_asked = Hash.new { |hash, key| hash[key] = {} } 
 
@@ -11,7 +9,7 @@
         
 
         preferences_asked[1][:q_num] = 'q2'
-        preferences_asked[1][:text1] = 'Walk_on_The_Beach'
+        preferences_asked[1][:text1] = 'Walk_On_The_Beach'
         preferences_asked[1][:text2] = 'Walk_In_The_Park'
         preferences_asked[1][:img1] = 'beach1-circle.png'
         preferences_asked[1][:img2] = 'park2-circle.png'
@@ -37,7 +35,7 @@
 
         preferences_asked[5][:q_num] = 'q6'
         preferences_asked[5][:text1] = 'Android'
-        preferences_asked[5][:text2] = 'Iphone'
+        preferences_asked[5][:text2] = 'iPhone'
         preferences_asked[5][:img1] = 'android1-circle.png'
         preferences_asked[5][:img2] = 'iphone2-circle.png'
 
@@ -67,6 +65,21 @@
         preferences_asked[9][:img1] = 'lift1-circle.png'
         preferences_asked[9][:img2] = 'escalator1-circle.png'
         %>
+        
+<!--
+<div class="container">
+  <div id="preference_wrapper">
+    <div class="preference">
+      <span id="text1">Preference 1</span>
+      <img src="/cat.png" id="image1">
+    </div>
+    <div class="preference">
+      <span id="text2">Preference 2</span>
+      <img src="/dog.png" id="image2">
+    </div>
+  </div>
+</div>
+-->
 
  <%= form_for(@questionnaire) do |f| %>
   <% preferences_asked.each do |key, i| %>      

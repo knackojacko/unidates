@@ -1,5 +1,25 @@
 <% reported_user = find_user(@report.reported_user_id) %>
 
-<%= @report.name %> <%= @report.email %>
-<p> reported user: <%= reported_user.name %> <%= reported_user.email %></p>
-<%= @report.problem %>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-3"></div>
+        <div class="col-xs-6">
+            <div class="container glass-back">
+              <div class="custom-form">
+                    <h2 style="text-align: center; color: silver!important;;">Submitted Report</h2>
+                
+                    <h3>Your Details</h3>
+                    <p>Your Name: <%= @report.name %></p> 
+                    <p>Your Email: <%= @report.email %></p>
+                    
+                    <br>
+                    
+                    <h3>Reported User</h3> 
+                    <p>Their Name: <%= reported_user.name %></p>
+                    <p>Their Email: <%= reported_user.email %></p>
+                    <p>Reason: <%= @report.problem %></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

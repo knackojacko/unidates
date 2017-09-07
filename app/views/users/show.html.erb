@@ -14,10 +14,10 @@
 <br><strong>Birthday:&nbsp;</strong><%= @user.dob %><br>
 
 
-<br><strong>I am a:&nbsp;</strong><%= @user.gender %>
-<br><strong>I'm interested in:&nbsp;</strong><%= @user.preference %>
+<br><strong>I'm A:&nbsp;</strong><%= @user.gender %>
+<br><strong>I'm Interested In:&nbsp;</strong><%= @user.preference %>
 
-<br><br><strong>My preferences:</strong><% @user.questionnaire.each do |questionnaire| %>
+<br><br><strong>My Preferences:</strong><% @user.questionnaire.each do |questionnaire| %>
     <%= questionnaire.q1 %>,
     <%= questionnaire.q2 %>,
     <%= questionnaire.q3 %>,
