@@ -2,6 +2,9 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
 /* -------------------- START: SIGN UP / LOG IN PAGES ----------------------- */
 .container.glass-back {
   background: inherit;
@@ -100,21 +103,25 @@
 
 
 /* ---------------------- START: USER PROFILE PAGE -------------------------- */
+//Add box to show users details
 .white-box {
     position: relative;
-    margin-top:20px;
+    font-family: "Arial", Courier, monospace !important;
+    margin-top:25px;
     left: 200px;    
-    height: 430px;
+    height: 420px;
     width: 60%;
     background-color: grey;
     opacity: 0.8;
     color: white;
-    padding: 5px;  
-    box-shadow: 0 0 10px #000;
-    border: 3px solid white;
-    border-radius: 12px;
+    padding: 40px;  
+    border: 30px solid transparent;
+    border-radius: 40px;
+    border-image:url('heart.png') 100 repeat;
+    box-shadow: 0 0 200px white;
     }
     
+//Profile picture holder
     #imageUpload
 {
     display: none;
