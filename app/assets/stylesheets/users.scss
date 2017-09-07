@@ -67,14 +67,49 @@
   -webkit-appearance: none;
 }
 
+.form-control.custom-label-nospace {
+  width: 100%;
+  margin-bottom: -9%;
+  align: center;
+  outline: 0;
+  background: 0;
+  border: 0;
+  font-size: 15px;
+  font-weight: normal;
+  color: #9b9b9b;
+
+  // Remove box shadow and radius from bootstrap
+  border-radius: 0px !important;
+  box-shadow: none !important;
+  -webkit-appearance: none;
+}
+
 .form-control.custom-select {
+  background: 0;
+  outline: 0;
+  border: 0;
+  border-bottom: 1px solid rgb(255, 255, 255);
+  margin-top: 20px;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.8);
+
+  // Remove box shadow and radius from bootstrap
+  border-radius: 0px !important;
+  box-shadow: none !important;
+  -webkit-appearance: none;
+}
+
+.form-control.custom-date-select {
   width: 32%;
   height:35px;
   align: center;
   background: 0;
   outline: 0;
   border: 1px solid rgb(255, 255, 255);
-  margin: 20px 0;
+  margin-top: 20px;
+  margin-bottom: 15px;
   font-size: 15px;
   color: rgba(255, 255, 255, 0.8) !important;
 
