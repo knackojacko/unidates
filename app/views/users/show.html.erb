@@ -1,25 +1,13 @@
 <div class="white-box">
-<script>$("#profileImage").click(function(e) {
-    $("#imageUpload").click();
-});
-
-function fasterPreview( uploader ) {
-    if ( uploader.files && uploader.files[0] ){
-          $('#profileImage').attr('src', 
-             window.URL.createObjectURL(uploader.files[0]) );
-    }
-}
-
-$("#imageUpload").change(function(){
-    fasterPreview( this );
-}); </script> 
-
 <p>
 <center>
+<script src="application.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
 <div id="profile-container">
 <image id="profileImage" src="http://www.nmvpolytechnic.com/images/first%20year/blank.jpg"/>
 </div>
+
 <input id="imageUpload" type="file" name="profile_photo" placeholder="Photo" required="" capture> 
 
 <font size="20"><%= @user.name %></center></font>
@@ -31,21 +19,18 @@ $("#imageUpload").change(function(){
 <br><strong>I am a:&nbsp;</strong><%= @user.gender %>
 <br><strong>I'm interested in:&nbsp;</strong><%= @user.preference %>
 
-<br><br><strong>About Me:</strong><br><br><br>
-
-<br><br><strong>My Preferences:</strong><% @user.questionnaire.each do |questionnaire| %>
-    <%= questionnaire.q1 %>
-    <%= questionnaire.q2 %>
-    <%= questionnaire.q3 %>
-    <%= questionnaire.q4 %>
-    <%= questionnaire.q5 %>
-    <%= questionnaire.q6 %>
-    <%= questionnaire.q7 %>
-    <%= questionnaire.q8 %>
-    <%= questionnaire.q9 %>
+<br><br><strong>My preferences:</strong><% @user.questionnaire.each do |questionnaire| %>
+    <%= questionnaire.q1 %>,
+    <%= questionnaire.q2 %>,
+    <%= questionnaire.q3 %>,
+    <%= questionnaire.q4 %>,
+    <%= questionnaire.q5 %>,
+    <%= questionnaire.q6 %>,
+    <%= questionnaire.q7 %>,
+    <%= questionnaire.q8 %>,
+    <%= questionnaire.q9 %>,
     <%= questionnaire.q10 %>
 <%end%>
+
 </p>
 </div>
-
-
