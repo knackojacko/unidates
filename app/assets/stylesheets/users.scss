@@ -13,6 +13,15 @@
   margin-top: 10vh;
 }
 
+.container.custom.signup {
+  margin-top: 0px;
+}
+
+// Used for very small screens
+.col-xs-8 > .container.custom.signup{
+  margin-top: 15px;
+}
+
 .glass-back, .content {
   width: 100%;
   height: 100%;

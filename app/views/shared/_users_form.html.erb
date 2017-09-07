@@ -1,43 +1,35 @@
 <%= form_for(@user) do |f| %>
-        <div class="col-xs-3"></div>
-        <div class="col-xs-6">
-          <div class="container glass-back">
-            <div class="custom-form">
-              <h2 style="text-align: center; color: silver!important;;">Come and Study!</h2>
-              <div class="form-group">
-                <%= f.text_field :name, placeholder: 'first name (what do they call you?)', class: 'form-control custom' %>
-              </div>
+    <h2 style="text-align: center; color: silver!important;;">Come and Study!</h2>
+    <div class="form-group">
+      <%= f.text_field :name, placeholder: 'first name ', class: 'form-control custom' %>
+    </div>
 
-              <div class="form-group">
-                <%= f.email_field :email, placeholder: 'email (where do we send electronic mail?)', class: 'form-control custom' %>
-              </div>
+    <div class="form-group">
+      <%= f.email_field :email, placeholder: 'email', class: 'form-control custom' %>
+    </div>
 
-              <div class="form-group">
-                <%= f.label :dob, 'birthday (when did you enter the world?)', class: 'form-control custom-label' %>
-                <%= f.date_select :dob, {:order => [:day, :month, :year], default: 18.years.ago, :start_year => 2017, :end_year => 1905}, {:class => 'form-control custom-date-select'} %>
-              </div>
+    <div class="form-group">
+      <%= f.label :dob, 'birthday', class: 'form-control custom-label' %>
+      <%= f.date_select :dob, {:order => [:day, :month, :year], default: 18.years.ago, :start_year => 2017, :end_year => 1905}, {:class => 'form-control custom-date-select'} %>
+    </div>
 
-              <div class="form-group">
-                <%= f.label :dob, 'gender', class: 'form-control custom-label-nospace' %>
-                <%= f.select(:gender, ['Man', 'Woman'], {:prompt => 'I am a...'}, {:class => 'form-control custom-select'}) %>
-              </div>
+    <div class="form-group">
+      <%= f.select(:gender, ['Man', 'Woman'], {:prompt => 'I am a...'}, {:class => 'form-control custom-select'}) %>
+    </div>
 
-              <div class="form-group">
-                <%= f.label :dob, 'preference', class: 'form-control custom-label-nospace' %>
-                <%= f.select(:preference, ['Men', 'Women', 'Both'], {:prompt => 'I\'m interested in...'}, {:class => 'form-control custom-select'}) %>
-              </div>
+    <div class="form-group">
+      <%= f.select(:preference, ['Men', 'Women', 'Both'], {:prompt => 'I\'m interested in...'}, {:class => 'form-control custom-select'}) %>
+    </div>
 
-              <div class="form-group">
-                <%= f.password_field :password, placeholder: 'password (keep it sneaky)', class: 'form-control custom' %>
-              </div>
+    <div class="form-group">
+      <%= f.password_field :password, placeholder: 'password (keep it sneaky)', class: 'form-control custom' %>
+    </div>
 
-              <div class="form-group">
-                <%= f.password_field :password_confirmation, placeholder: 'confirm password', class: 'form-control custom' %>
-              </div>
+    <div class="form-group">
+      <%= f.password_field :password_confirmation, placeholder: 'confirm password', class: 'form-control custom' %>
+    </div>
 
-              <%= f.submit yield(:button_text), class: 'btn btn-block btn-success' %>
-            </div>
-          </div>
-        </div>
-        <div class="col-xs-3"><%= render 'shared/error_messages', object: @user %></div>
-    <% end %>
+    <%= f.submit yield(:button_text), class: 'btn btn-block btn-success' %>
+
+    <div class="col-xs-3"><%= render 'shared/error_messages', object: @user %></div>
+<% end %>
