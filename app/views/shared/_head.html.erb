@@ -4,4 +4,33 @@
   <%= stylesheet_link_tag 'application', media: 'all',
                           'data-turbolinks-track': 'reload' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+  <% if logged_in? %>
+      <style>
+        body {
+          background: url("/assets/temporary_background.jpg") no-repeat;
+          background-size: cover;
+          background-attachment: fixed;
+          height: 100vh !important;
+          width: 100vw !important;
+        }
+
+        .glass-back:before {
+          background: url("/assets/temporary_background.jpg") no-repeat;
+        }
+      </style>
+  <% else %>
+      <style>
+        body {
+          background: url("main_back_edit.jpg") no-repeat;
+          background-size: cover;
+          background-attachment: fixed;
+          height: 100vh !important;
+          width: 100vw !important;
+        }
+        .glass-back:before {
+          background: url("main_back_edit.jpg") no-repeat;
+        }
+      </style>
+  <% end %>
 </head>
