@@ -64,6 +64,10 @@
   margin-top: 5%;
 }
 
+.new_user {
+  width: 80%;
+}
+
 .form-control.custom {
   background: 0;
   outline: 0;
@@ -140,7 +144,6 @@
   // Remove box shadow and radius from bootstrap
   border-radius: 0px !important;
   box-shadow: none !important;
-  -webkit-appearance: none;
 }
 
 .form-control.custom-date-select {
@@ -154,11 +157,11 @@
   margin-bottom: 15px;
   font-size: 15px;
   color: rgba(255, 255, 255, 0.8) !important;
+  text-align-last: center;
 
   // Remove box shadow and radius from bootstrap
   border-radius: 0px !important;
   box-shadow: none !important;
-  -webkit-appearance: none;
   display: inline-block;
 
   overflow: visible;
