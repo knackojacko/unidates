@@ -21,7 +21,6 @@ body {
   //https://www.flickr.com/photos/noquedanfotos/5425846901/in/photostream/
   //-webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
   //filter: grayscale(100%);
-  background: url("main_back_edit.jpg") no-repeat;
   background-size: cover;
   background-attachment: fixed;
   height: 100vh !important;
@@ -56,8 +55,8 @@ body {
 
 }
 
-a:visited {
-  color: red;
+.form-group {
+    margin-bottom: 0px;
 }
 
 #error_explanation {
@@ -77,9 +76,11 @@ a:visited {
   }
 }
 
-//date 
+.container-fluid {
+  padding-bottom: 50px;
+}
 
-
+//birthday 
 #user_dob_1i {
   color: black;
 }
@@ -91,4 +92,26 @@ a:visited {
 #user_dob_3i {
   color: black;
 }
+
+.input-hidden {
+  position: absolute;
+  left: -9999px;
+}
+
+input[type=radio]:checked + label>img {
+
+}
+
+
+input[type=radio] + label>img {
+  width: 150px;
+  height: 150px;
+  opacity: 0.5;
+  transition: 500ms all;
+}
+
+input[type=radio]:checked + label>img {
+    opacity: 1;
+}
+
 

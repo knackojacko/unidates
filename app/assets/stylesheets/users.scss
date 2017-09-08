@@ -1,29 +1,60 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import "bootstrap-sprockets";
+@import "bootstrap";
 
-.container.glass-back {
-  background: inherit;
-  width: 450px;
+/* -------------------- START: SIGN UP / LOG IN PAGES ----------------------- */
+.container.custom {
+  width: auto;
   height: auto;
-  position: absolute;
-  padding-top: 10px;
+  position: relative;
   padding-bottom: 25px;
-  overflow: hidden;
-
-  border-radius: 5%;
+  margin-top: 10vh;
 }
 
-.container.glass-back:before {
+.container.custom.signup {
+  margin-top: 0px;
+}
+
+// Used for very small screens
+.col-xs-8 > .container.custom.signup{
+  margin-top: 15px;
+}
+
+.glass-back, .content {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.btn.btn-primary{
+  width: 90% !important;
+}
+
+.glass-back {
+  background: inherit;
+  overflow: hidden;
+  border-radius: 15px;
+}
+
+.glass-back:before {
   width: 110%;
-  height: 650px;
+  height: 110%;
   content: "";
   position: inherit;
-  top: -25px;
-  left: -25px;
+  top: -10px;
+  left: -10px;
   background: url("main_back_edit.jpg") no-repeat;
   box-shadow: inset 0 0 0 300px rgba(200, 200, 200, 0.3);
   filter: blur(10px) !important;
+}
+
+.content {
+  z-index: 10;
+  padding-top: 25px;
 }
 
 .custom-form {
@@ -49,6 +80,18 @@
   -webkit-appearance: none;
 }
 
+.form-control.custom.non-editable {
+  user-select: none;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -o-user-select: none;
+}
+
+.form-control.custom[readonly] {
+  background-color: transparent;
+}
+
 .form-control.custom-label {
   width: 100%;
   margin-bottom: -5%;
@@ -66,14 +109,49 @@
   -webkit-appearance: none;
 }
 
+.form-control.custom-label-nospace {
+  width: 100%;
+  margin-bottom: -9%;
+  align: center;
+  outline: 0;
+  background: 0;
+  border: 0;
+  font-size: 15px;
+  font-weight: normal;
+  color: #9b9b9b;
+
+  // Remove box shadow and radius from bootstrap
+  border-radius: 0px !important;
+  box-shadow: none !important;
+  -webkit-appearance: none;
+}
+
 .form-control.custom-select {
+  background: 0;
+  outline: 0;
+  border: 0;
+  border-bottom: 1px solid rgb(255, 255, 255);
+  margin-top: 20px;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.8);
+
+  // Remove box shadow and radius from bootstrap
+  border-radius: 0px !important;
+  box-shadow: none !important;
+  -webkit-appearance: none;
+}
+
+.form-control.custom-date-select {
   width: 32%;
-  height:35px;
+  height: 35px;
   align: center;
   background: 0;
   outline: 0;
   border: 1px solid rgb(255, 255, 255);
-  margin: 20px 0;
+  margin-top: 20px;
+  margin-bottom: 15px;
   font-size: 15px;
   color: rgba(255, 255, 255, 0.8) !important;
 
@@ -86,53 +164,60 @@
   overflow: visible;
 }
 
-.field_with_errors{
+.field_with_errors {
   padding: 0px;
   background: 0;
   display: inherit;
 }
 
-.field_with_errors .form-control{
+.field_with_errors .form-control {
   color: inherit !important;
 }
 
+/* --------------------- END: SIGN UP / LOG IN PAGES ------------------------ */
+
+/* ---------------------- START: USER PROFILE PAGE -------------------------- */
+//Add box to show users details
 .white-box {
-    position: relative;
-    margin-top:20px;
-    left: 200px;    
-    height: 430px;
-    width: 60%;
-    background-color: grey;
-    opacity: 0.8;
-    color: white;
-    padding: 5px;  
-    box-shadow: 0 0 10px #000;
-    border: 3px solid white;
-    border-radius: 12px;
-    }
-    
-    #imageUpload
-{
-    display: none;
+  position: relative;
+  font-family: "Arial", Courier, monospace !important;
+  margin-top: 25px;
+  left: 200px;
+  height: 420px;
+  width: 60%;
+  background-color: grey;
+  opacity: 0.8;
+  color: white;
+  padding: 40px;
+  border: 30px solid transparent;
+  border-radius: 40px;
+  border-image: url('heart.png') 100 repeat;
+  box-shadow: 0 0 200px white;
 }
 
-#profileImage
-{
-    cursor: pointer;
+//Profile picture holder
+#imageUpload {
+  display: none;
+}
+
+#profileImage {
+  cursor: pointer;
 }
 
 #profile-container {
-    width: 100px;
-    height: 100px;
-    overflow: hidden;
-    -webkit-border-radius: 25%;
-    -moz-border-radius: 25%;
-    -ms-border-radius: 25%;
-    -o-border-radius: 25%;
-    border-radius: 25%;
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+  -webkit-border-radius: 25%;
+  -moz-border-radius: 25%;
+  -ms-border-radius: 25%;
+  -o-border-radius: 25%;
+  border-radius: 25%;
 }
 
 #profile-container img {
-    width: 100px;
-    height: 100px;
+  width: 100px;
+  height: 100px;
 }
+
+/* ----------------------- END: USER PROFILE PAGE --------------------------- */

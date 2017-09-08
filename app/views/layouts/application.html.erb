@@ -3,7 +3,7 @@
   <%= render partial: 'shared/head' %>
   <body>
         <% if logged_in? && current_user.is_admin? %>
-          <%= render partial: 'shared/admin' %>          
+          <%= render partial: 'shared/admin' %>
         <% else %>
           <%= render partial: 'shared/nav' %>
         <%end%>
