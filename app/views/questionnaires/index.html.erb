@@ -62,7 +62,7 @@
     
     <%end%>
 
-    <%= orderd_users = matched_users.sort_by { |k, v| v[:count]}.reverse  %>
+    <% orderd_users = matched_users.sort_by { |k, v| v[:count]}.reverse  %>
     
     <h3>Your matches </h3>
     <% orderd_users.each do |key, user| %>

@@ -29,8 +29,6 @@ ActiveRecord::Schema.define(version: 20170906064329) do
   end
 
   create_table "reports", force: :cascade do |t|
-    t.string "name"
-    t.string "email"
     t.string "problem"
     t.integer "reported_user_id"
     t.datetime "created_at", null: false

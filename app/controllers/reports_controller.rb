@@ -1,14 +1,18 @@
 class ReportsController < ApplicationController
+    before_action :admin_user,   only: [:admin_index]
   
   def index
-    @report = Report.all
+    @report = Report.where(user_id: current_user.id)
   end
 
 
   def show
     @report = Report.find(params[:id])    
   end
-
+  
+  def admin_index
+    @report = Report.all
+  end
 
   def new
     @report = Report.new
@@ -43,12 +47,19 @@ class ReportsController < ApplicationController
       render 'edit'
     end
   end
+
+  def destroy
+    if current_user.is_admin?
+      Report.find(params[:id]).destroy
+    end
+        redirect_to adminreports_path
+  end
   
   
   private
   
     def report_params
-      params.require(:report).permit(:user_id, :name, :email, :problem, :reported_user_id)
+      params.require(:report).permit(:user_id, :problem, :reported_user_id)
     end
   
 end
