@@ -3,12 +3,12 @@
     <h3>Your Details:</h3>
     <div class="form-group">
       <%= f.label :Name, 'your name', class: 'form-control custom-label' %>
-      <%= f.text_field :name, class: 'form-control custom', value: current_user.name %>
+      <%= f.text_field :name, class: 'form-control custom', value: current_user.name, readonly: true %>
     </div>
 
     <div class="form-group">
       <%= f.label :Email, 'your email', class: 'form-control custom-label' %>
-      <%= f.email_field :email, class: 'form-control custom', value: current_user.email %>
+      <%= f.email_field :email, class: 'form-control custom', value: current_user.email, readonly: true %>
     </div>
 
     <br>
