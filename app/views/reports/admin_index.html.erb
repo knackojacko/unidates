@@ -5,9 +5,8 @@
 
     <p>Report Author: <%= reported_by.name %></p>
     <p>Reported User: <%= reported_user.name %></p>
-    <p>Reason: <%= report.reason %></p>
+    <p>Reason: <%= report.problem %></p>
     
     <%= link_to "View Report", report_path(report), class: "btn btn-success btn-sm" %>
     <%= link_to "End Report", report_path(report), method: :delete, class: "btn btn-danger btn-sm" %>
-
 <%end%>
