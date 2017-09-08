@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   before_action :logged_in_user, only: [:edit, :update, :show, :index]
   before_action :correct_user,   only: [:edit, :update]
+  before_action :admin_user, only: [:index]
 
     def index
         @user = User.all
@@ -43,6 +44,7 @@ class UsersController < ApplicationController
     def destroy
         if current_user.is_admin?
             Questionnaire.where(user_id: params[:id]).destroy_all
+            Reports.where(user_id: params[:id]).destroy_all
             User.find(params[:id]).destroy
         end
         redirect_to users_path

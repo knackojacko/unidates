@@ -12,6 +12,7 @@
         <% if logged_in? %>
           <% if current_user.is_admin? %>
             <li><%= link_to "All Users", users_path %></li>
+            <li><%= link_to "All Reports", adminreports_path %></li>
             <li><%= link_to "Log Out", logout_path, method: :delete %></li>
           <%end%>
         <%end%>

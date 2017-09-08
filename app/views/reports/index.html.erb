@@ -1,0 +1,16 @@
+
+
+<p>All reports by <%= current_user.name %></p>
+
+<% @report.each do |report| %>
+    
+    <% reported_user = find_user(report.reported_user_id) %>
+    
+    <p><%=reported_user.name%> 
+    <%=reported_user.email%>
+    <%= report.problem %></p>
+    
+    <p><%= link_to "View", report_path(report) %></p>
+    
+    
+<%end%>

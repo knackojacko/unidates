@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
 
   get 'users/new'
-
+  get    '/adminreports',    to: 'reports#admin_index'
   root 'startup#index'
   get 'sessions/new'
   get    '/signup',  to: 'users#new'
