@@ -19,7 +19,7 @@
       <%= f.label "User" %><br />
       <%= f.collection_select :reported_user_id, get_all_users, :id, :name do |b| %>
         <div class="collection-check-box">
-        <%= b.selectx %>
+        <%= b.select %>
         <%= b.label %>
       </div>
       <%end%>
