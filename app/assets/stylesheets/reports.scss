@@ -1,3 +1,21 @@
 // Place all the styles related to the reports controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+.form-control.custom-textarea {
+  border: 1px solid rgb(255, 255, 255);
+  height: 100px;
+  background: 0;
+  outline: 0;
+  margin: 20px 0;
+  padding-bottom: 10px;
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.8);
+  
+  // Remove box shadow and radius from bootstrap
+  border-radius: 0px !important;
+  box-shadow: none !important;
+  -webkit-appearance: none;
+}
