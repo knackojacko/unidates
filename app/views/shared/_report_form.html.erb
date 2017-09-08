@@ -3,25 +3,18 @@
 <%= form_for(@report) do |f| %>
 
     <h3>Your Details:</h3>
-
     <p><%= current_user.name%></p>
-
-
     <p><%= current_user.email%></p>
-
 
     <br>
 
-    <!--We shouldn't use a dropdown for the user as this will become MASSIVE if we had a larger userbase-->
     <h3>Their Details:</h3>
-    
     <p><%= reported_user.name%></p>
     <p><%= reported_user.email%></p>
 
-
     <div class="form-group">
       <%= f.label :Reason, 'reason', class: 'form-control custom-label' %>
-      <%= f.text_area :problem, class: 'form-control custom-textarea' %>
+      <%= f.text_area :reason, class: 'form-control custom-textarea' %>
     </div>
 
     <%= f.hidden_field :user_id, :value => current_user.id %>

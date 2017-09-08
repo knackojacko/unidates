@@ -1,16 +1,13 @@
-
-
-
 <% @report.each do |report| %>
     
     <% reported_by = find_user(report.user_id)%>
     <% reported_user = find_user(report.reported_user_id)%>
 
-    <p> reported by: <%= reported_by.name %>,
-    reported user: <%= reported_user.name %>,
-    <%= report.problem %></p>
+    <p>Report Author: <%= reported_by.name %></p>
+    <p>Reported User: <%= reported_user.name %></p>
+    <p>Reason: <%= report.reason %></p>
     
-    <%= link_to "view", report_path(report), class: "btn btn-success btn-sm" %>
+    <%= link_to "View Report", report_path(report), class: "btn btn-success btn-sm" %>
     <%= link_to "End Report", report_path(report), method: :delete, class: "btn btn-danger btn-sm" %>
 
 <%end%>
