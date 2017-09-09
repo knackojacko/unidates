@@ -35,7 +35,7 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-
+gem 'ruby' '2.4.1'
 
 gem 'carrierwave', '~> 1.0'
 
