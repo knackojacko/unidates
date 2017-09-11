@@ -9,15 +9,11 @@
       <style>
         body {
           /*https://www.peopleperhour.com/freelancer/thomas/designer-illustrator/361235*/
-          background: url('art.png') no-repeat;
-          background-size: cover;
-          background-attachment: fixed;
-          height: 100vh !important;
-          width: 100vw !important;
+          background: url(<%= image_path('temporary_background.jpg') %>) no-repeat;
         }
 
         .glass-back:before {
-          background: url("temporary_background.jpg") no-repeat;
+          background: url(<%= image_path('temporary_background.jpg') %>) no-repeat;
         }
       </style>
   <% else %>
