@@ -12,6 +12,9 @@ module UsersHelper
     end
     
     def find_user(reported_user_id)
+        if reported_user_id == 0
+            reported_user_id = 1
+        end
         User.find(reported_user_id)
     end
     
