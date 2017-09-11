@@ -20,14 +20,14 @@
             <li><%= link_to "Matched Users", questionnaires_path %></li>
             <li><%= link_to "Profile", current_user %></li>
             <li><%= link_to "Update Profile", edit_user_path(current_user) %></li>
-            <li><%= link_to "View Reports", reports_path %></li>
-            
+            <li><%= link_to "Report", new_report_path %></li>
             <li><%= link_to "Log Out", logout_path, method: :delete %></li>
+
           <% else %>
             <li><%= link_to "Sign Up", signup_path %></li>
             <li><%= link_to "Log In", login_path %></li>
           <% end %>
         </ul>
       </div>
-    </div>
+      </div>
   </header>

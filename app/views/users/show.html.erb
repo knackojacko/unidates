@@ -1,23 +1,29 @@
-<div class="white-box">
-<p>
-<center>
+<div class="container-fluid"  style="white-space:nowrap">
+  <div class="row">
 
-<div id="profile-container">
-<image id="profileImage" src="http://www.nmvpolytechnic.com/images/first%20year/blank.jpg"/>
+      <div class="container custom">
+        <div class="glass-back"></div>
+        <div class="content" style="position:relative;">
+<p>
+
+<div id="profile-container" style="display:inline;">
+<image id="profileImage" src="/assets/default_profile.png"/>
 </div>
 
 <input id="imageUpload" type="file" name="profile_photo" placeholder="Photo" required="" capture> 
 
-<font size="20"><%= @user.name %></center></font>
+&nbsp;&nbsp;&nbsp;&nbsp; <i><font size="25"><style="display:inline; white-space:nowrap;"><%= @user.name %></font></i><br></style>
 
-<strong>Email:&nbsp;</strong><%= @user.email %>
-<br><strong>Birthday:&nbsp;</strong><%= @user.dob %><br>
+<br>
+
+<strong>Email:&nbsp;</strong><i><%= @user.email %></i>
+<br><strong>Birthday:&nbsp;</strong><i><%= @user.dob %></i><br>
 
 
-<br><strong>I'm A:&nbsp;</strong><%= @user.gender %>
-<br><strong>I'm Interested In:&nbsp;</strong><%= @user.preference %>
+<br><strong>I'm A:&nbsp;</strong><i><%= @user.gender %></i>
+<br><strong>I'm Interested In:&nbsp;</strong><i><%= @user.preference %></i>
 
-<br><br><strong>My Preferences:</strong><% @user.questionnaire.each do |questionnaire| %>
+<br><br><strong>My Preferences:</strong> <br> <i><% @user.questionnaire.each do |questionnaire| %>
     <%= questionnaire.q1 %>,
     <%= questionnaire.q2 %>,
     <%= questionnaire.q3 %>,
@@ -29,10 +35,10 @@
     <%= questionnaire.q9 %>,
     <%= questionnaire.q10 %>
 <%end%>
-
-    <% if @user != current_user %>
-        <%= link_to "Report", new_report_path(reported_id: @user.id), class: "btn btn-success btn-sm"%>
-    <%end%>
-
+</i>
 </p>
+</div>
+</div>
+</div>
+</div>
 </div>

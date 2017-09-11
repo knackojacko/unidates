@@ -1,11 +1,13 @@
+<div class="form-group">
 <% get_all_users.each do |user| %>
     <p><%= user.name %></p>
     <p><%= user.email %></p>
-    
+
     <% if current_user.is_admin? %>
         <%= link_to "Profile", user_path(user), class: "btn btn-success btn-sm" %>
-        <%= link_to "Delete User", user_path(user), method: :delete, class: "btn btn-danger btn-sm" %>
+        <%= link_to "Delete User", user_path(user), method: :delete, class: "btn btn-danger btn-sm" %><br>
     <% end %>
-    
+
     </br>
 <%end%>
+</div>
