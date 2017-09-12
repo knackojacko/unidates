@@ -23,14 +23,14 @@
   <% else %>
       <style>
         body {
-          background: url('main_back.jpg') no-repeat;
+          background: url(<%= image_path('main_back.jpg') %>) no-repeat;
           background-size: cover;
           background-attachment: fixed;
           height: 100vh !important;
           width: 100vw !important;
         }
         .glass-back:before {
-          background: url("main_back_edit.jpg") no-repeat;
+          background: url(<%= image_path('main_back.jpg') %>) no-repeat;
         }
       </style>
   <% end %>
