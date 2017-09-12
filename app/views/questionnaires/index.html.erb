@@ -2,6 +2,7 @@
     <p>Please fill out your preferences first!</p>
 <%else %>
 
+    <!-- MATCHMAKING ALGORITHM -->
     <%users = get_user_preferences %>
 
     <% matched_users = Hash.new { |hash, key| hash[key] = {} } %>
@@ -61,8 +62,9 @@
         <% matched_users[index][:count] = count %>
     
     <%end%>
-
     <% orderd_users = matched_users.sort_by { |k, v| v[:count]}.reverse  %>
+
+    <!--END MATCHMAKE ALGORITHM-->
     
     <h3>Your matches </h3>
     <% orderd_users.each do |key, user| %>
