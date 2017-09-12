@@ -1,76 +1,100 @@
 <% if current_user.questionnaire.blank? %>
     <p>Please fill out your preferences first!</p>
-<%else %>
+<% else %>
 
     <!-- MATCHMAKING ALGORITHM -->
-    <%users = get_user_preferences %>
+    <% users = get_user_preferences %>
 
-    <% matched_users = Hash.new { |hash, key| hash[key] = {} } %>
-    
-    <% users.each_with_index do |user,index| %>
+    <% matched_users = Hash.new {|hash, key| hash[key] = {}} %>
+
+    <% users.each_with_index do |user, index| %>
         <% count = 0 %>
-    
+
         <% user.questionnaire.each do |other_questionnaire| %>
-            <% current_user.questionnaire.each do |user_questionnaire|%>
-        
+            <% current_user.questionnaire.each do |user_questionnaire| %>
+
                 <% if user_questionnaire.q1 == other_questionnaire.q1 %>
                     <% count += 1 %>
-                <%end%>
+                <% end %>
 
                 <% if user_questionnaire.q2 == other_questionnaire.q2 %>
                     <% count += 1 %>
-                <%end%>
+                <% end %>
 
                 <% if user_questionnaire.q3 == other_questionnaire.q3 %>
                     <% count += 1 %>
-                <%end%>
-            
+                <% end %>
+
                 <% if user_questionnaire.q4 == other_questionnaire.q4 %>
                     <% count += 1 %>
-                <%end%>
+                <% end %>
 
                 <% if user_questionnaire.q5 == other_questionnaire.q5 %>
                     <% count += 1 %>
-                <%end%>
+                <% end %>
 
                 <% if user_questionnaire.q6 == other_questionnaire.q6 %>
                     <% count += 1 %>
-                <%end%>
+                <% end %>
 
                 <% if user_questionnaire.q7 == other_questionnaire.q7 %>
                     <% count += 1 %>
-                <%end%>
+                <% end %>
 
                 <% if user_questionnaire.q8 == other_questionnaire.q8 %>
                     <% count += 1 %>
-                <%end%>
+                <% end %>
 
                 <% if user_questionnaire.q9 == other_questionnaire.q9 %>
                     <% count += 1 %>
-                <%end%>
+                <% end %>
 
                 <% if user_questionnaire.q10 == other_questionnaire.q10 %>
                     <% count += 1 %>
-                <%end%>
-            <%end%>
-        <%end%>
-    
+                <% end %>
+            <% end %>
+        <% end %>
+
         <% matched_users[index][:name] = user.name %>
         <% matched_users[index][:dob] = user.dob %>
         <% matched_users[index][:gender] = user.gender %>
         <% matched_users[index][:id] = user.id %>
         <% matched_users[index][:count] = count %>
-    
-    <%end%>
-    <% orderd_users = matched_users.sort_by { |k, v| v[:count]}.reverse  %>
+
+    <% end %>
+    <% orderd_users = matched_users.sort_by {|k, v| v[:count]}.reverse %>
 
     <!--END MATCHMAKE ALGORITHM-->
-    
-    <h3>Your matches </h3>
-    <% orderd_users.each do |key, user| %>
-        <%= render :partial => 'shared/display_user', :locals => {:user => user, :key => key}%>
-    <% end %>
-<%end%>
+
+    <h3 align="center">Your matches </h3>
+    <div class="container">
+      <% loopcounter = 0 %>
+      <% orderd_users.each do |key, user| %>
+          <% printf("loopcounter: %i\tNAME: %s\n", loopcounter % 3, user[:name]) %>
+          <% if loopcounter % 3 == 0 %>
+              <div class="col-md-4">
+                <%= render :partial => 'shared/display_user', :locals => {:user => user, :key => key} %>
+              </div>
+          <% end %>
+
+
+
+          <% if loopcounter % 3 == 1 %>
+              <div class="col-md-4">
+                <%= render :partial => 'shared/display_user', :locals => {:user => user, :key => key} %>
+              </div>
+          <% end %>
+
+          <% if loopcounter % 3 == 2 %>
+              <div class="col-md-4">
+                <%= render :partial => 'shared/display_user', :locals => {:user => user, :key => key} %>
+              </div>
+          <% end %>
+
+          <% loopcounter += 1 %>
+      <% end %>
+    </div>
+<% end %>
 
 
 

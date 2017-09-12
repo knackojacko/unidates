@@ -1,4 +1,11 @@
-<p><%= user[:name] %>, <%= user[:dob] %>, <%= user[:gender] %></p>
-<p>Percentage matched: <%= user[:count] %>0%</p>
-<p><%= link_to "Profile", user_path(user[:id]) %></p>
-</br>
+<div class="container-fluid">
+  <div class="container custom">
+    <div class="glass-back"></div>
+    <div class="content" style="position:relative;">
+      <p><%= user[:name] %>, <%= user[:dob] %>, <%= user[:gender] %></p>
+      <p>Percentage matched: <%= user[:count] %>0%</p>
+      <p><%= link_to "Profile", user_path(user[:id]) %></p>
+      </br>
+    </div>
+  </div>
+</div>
