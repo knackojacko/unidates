@@ -1,11 +1,18 @@
-<div class="container-fluid">
-  <div class="container custom">
-    <div class="glass-back"></div>
-    <div class="content" style="position:relative;">
-      <p><%= user[:name] %>, <%= user[:dob] %>, <%= user[:gender] %></p>
-      <p>Percentage matched: <%= user[:count] %>0%</p>
-      <p><%= link_to "Profile", user_path(user[:id]) %></p>
-      </br>
+<!--THE CONTAINER FOR EACH OF THE MATCHED USERS-->
+
+<div class="container custom">
+  <div class="glass-back"></div>
+  <div class="content" style="position:relative;">
+    <div class="row">
+      <div class="col-xs-6 col-md-6 col-lg-6" style="padding-top: 1%;">
+        <%= link_to image_tag('default_profile.png', width: 'auto', height: 'auto'), user_path(user[:id]) %>
+      </div>
+      <div class="col-xs-6 col-md-6 col-lg-6">
+        <h4><%= user[:name] %>,</h4>
+        <h5><%= user[:gender] %></h5>
+        <h5><%= user[:dob] %>,</h5>
+        <h6>Matched: <%= user[:count] %>0%</h6>
+      </div>
     </div>
   </div>
 </div>
