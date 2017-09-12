@@ -58,6 +58,7 @@
         <% matched_users[index][:name] = user.name %>
         <% matched_users[index][:dob] = user.dob %>
         <% matched_users[index][:gender] = user.gender %>
+        <% matched_users[index][:email] = user.email %>
         <% matched_users[index][:id] = user.id %>
         <% matched_users[index][:count] = count %>
 
@@ -95,6 +96,8 @@
       <% end %>
     </div>
 <% end %>
+
+<%= render :partial => 'shared/chat_box' %>
 
 
 

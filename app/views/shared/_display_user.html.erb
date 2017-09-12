@@ -12,6 +12,8 @@
         <h5><%= user[:gender] %></h5>
         <h5><%= user[:dob] %>,</h5>
         <h6>Matched: <%= user[:count] %>0%</h6>
+        <%= link_to 'chat', conversations_path(user_id: user[:id]), remote: true, method: :post %>
+     
       </div>
     </div>
   </div>

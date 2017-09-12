@@ -49,6 +49,21 @@ class UsersController < ApplicationController
         end
         redirect_to users_path
     end
+    
+    def ban
+      @user = User.find(params[:id])
+      @user.update_attribute(:ban, true)
+      flash[:success] = "User banned"
+      redirect_to users_path
+    end
+
+    def unban
+      @user = User.find(params[:id])
+      @user.update_attribute(:ban, false)
+      flash[:success] = "User has been unbanned"
+      redirect_to users_path
+    end
+        
 
     private
 
