@@ -68,30 +68,13 @@
 
     <h3 align="center">Your matches </h3>
     <div class="container">
-      <% loopcounter = 0 %>
+
       <% orderd_users.each do |key, user| %>
-          <% printf("loopcounter: %i\tNAME: %s\n", loopcounter % 3, user[:name]) %>
-          <% if loopcounter % 3 == 0 %>
-              <div class="col-sm-6 col-md-4">
-                <%= render :partial => 'shared/display_user', :locals => {:user => user, :key => key} %>
-              </div>
-          <% end %>
 
+          <div class="col-sm-6 col-md-4">
+            <%= render :partial => 'shared/display_user', :locals => {:user => user, :key => key} %>
+          </div>
 
-
-          <% if loopcounter % 3 == 1 %>
-              <div class="col-sm-6 col-md-4">
-                <%= render :partial => 'shared/display_user', :locals => {:user => user, :key => key} %>
-              </div>
-          <% end %>
-
-          <% if loopcounter % 3 == 2 %>
-              <div class="col-sm-6 col-md-4">
-                <%= render :partial => 'shared/display_user', :locals => {:user => user, :key => key} %>
-              </div>
-          <% end %>
-
-          <% loopcounter += 1 %>
       <% end %>
     </div>
 <% end %>
