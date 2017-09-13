@@ -9,15 +9,15 @@
         <div class="content" style="position:relative;">
           <p>
 
-          <div id="profile-container" style="display:inline;">
+          <div id="profile-container">
             <image id="profileImage" src=<%= image_path('default_profile.png')%>/>
           </div>
 
           <input id="imageUpload" type="file" name="profile_photo" placeholder="Photo" required="" capture>
 
-          &nbsp;&nbsp;&nbsp;&nbsp; <i><h2 style="display:inline"><%= @user.name %></i></h2>
-          <br>
-          <br>
+          <i><h2><%= @user.name %></i></h2>
+
+          <hr>
 
           <strong>Email:&nbsp;</strong><i><%= @user.email %></i>
           <br><strong>Birthday:&nbsp;</strong><i><%= @user.dob %></i><br>
