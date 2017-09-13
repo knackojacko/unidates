@@ -92,8 +92,8 @@ $( document ).on('turbolinks:load', function() {
 
 $(document).ready(function(){
     setTimeout(function(){
-        $('.alert').remove();
-    }, 5000);
+        $('.alert').fadeOut();
+    }, 3000);
 });
 
 /*minimizing chat window */
