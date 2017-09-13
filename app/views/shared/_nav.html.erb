@@ -11,23 +11,25 @@
         <ul class="nav navbar-nav navbar-right">
           <li><%= link_to "Home", root_path %></li>
           <% if logged_in? %>
-            <% if current_user.questionnaire.blank? %>
-              <li><%= link_to "Preferences", new_questionnaire_path %></li>
-            <%else  %>
-              <li><%= link_to "Update Preferences", edit_questionnaire_path(current_user.questionnaire.ids) %></li>
-
-            <%end%>
             <li><%= link_to "Matched Users", questionnaires_path %></li>
 
             <li class="dropdown">
-            <li class="dropdown-toggle" data-toggle="dropdown"><%= link_to "Profile", current_user %></li>
-            <ul class="dropdown-menu">
-            <li><%= link_to "My Profile", current_user %></li>
-            <li><%= link_to "Update Profile", edit_user_path(current_user) %></li>
-            <li><%= link_to "Update Preferences", edit_questionnaire_path(current_user.questionnaire.ids) %></li>
-            <li class="divider"/>
-            <li><%= link_to "Log Out", logout_path, method: :delete %></li>
-            </ul>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <%= current_user.email %> <b class="caret"></b>
+              </a>
+            
+              <ul class="dropdown-menu">
+                <li><%= link_to "My Profile", current_user %></li>
+                <li><%= link_to "Update Profile", edit_user_path(current_user) %></li>
+
+                <% if current_user.questionnaire.blank? %>
+                  <li><%= link_to "Preferences", new_questionnaire_path %></li>
+                <%else  %>
+                  <li><%= link_to "Update Preferences", edit_questionnaire_path(current_user.questionnaire.ids) %></li>
+                <%end%>
+                <li class="divider"/>
+                <li><%= link_to "Log Out", logout_path, method: :delete %></li>
+              </ul>
             </li>
 
           <% else %>
@@ -38,3 +40,4 @@
       </div>
       </div>
   </header>
+  
