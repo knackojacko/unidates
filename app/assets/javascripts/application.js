@@ -90,6 +90,11 @@ $( document ).on('turbolinks:load', function() {
 // END FILE
 });
 
+$(document).ready(function(){
+    setTimeout(function(){
+        $('.alert').remove();
+    }, 5000);
+});
 
 /*minimizing chat window */
 (function() {
