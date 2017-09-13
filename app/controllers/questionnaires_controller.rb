@@ -47,7 +47,7 @@ class QuestionnairesController < ApplicationController
     @questionnaire = Questionnaire.find(params[:id])
     if @questionnaire.update_attributes(questionnaire_params)
       flash[:success] = "preference updated"
-       render 'index'
+       redirect_to questionnaires_path
        
     else
       render 'edit'
