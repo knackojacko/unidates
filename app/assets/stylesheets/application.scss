@@ -51,12 +51,12 @@ body {
 }
 
 body {
-	color: white;
+  color: white;
 
 }
 
 .form-group {
-    margin-bottom: 0px;
+  margin-bottom: 0px;
 }
 
 #error_explanation {
@@ -85,40 +85,36 @@ body {
   left: -9999px;
 }
 
-input[type=radio]:checked + label>img {
+input[type=radio]:checked + label > img {
 
 }
 
-
-input[type=radio] + label>img {
+input[type=radio] + label > img {
   width: 150px;
   height: 150px;
   opacity: 0.5;
   transition: 500ms all;
 }
 
-input[type=radio]:checked + label>img {
-    opacity: 1;
+input[type=radio]:checked + label > img {
+  opacity: 1;
 }
 
 option {
   background-color: #575757;
 }
 
-
 ul {
   padding-left: 0px;
   list-style: none;
 }
-
 
 .messages-list {
   max-height: 200px;
   overflow-y: auto;
   overflow-x: hidden;
 }
- 
- 
+
 .message-sent {
   position: relative;
   background-color: #54ff44;
@@ -127,8 +123,7 @@ ul {
   padding: 10px;
   float: right;
 }
- 
- 
+
 .message-received {
   background-color: #ff2b05;
   border-color: #EEEEEE;
@@ -136,4 +131,16 @@ ul {
   padding: 10px;
   float: left;
 }
+
+#footer {
+  bottom: 0;
+  width: 100%;
+  position: fixed;
+  height: 25px;
+  background-color: #f5f5f5;
+  .footer-block {
+    margin: 20px 0;
+  }
+}
+
 
