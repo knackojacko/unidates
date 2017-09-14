@@ -63,6 +63,22 @@ class UsersController < ApplicationController
       flash[:success] = "User has been unbanned"
       redirect_to users_path
     end
+
+    def add_like
+      liked_user = (params[:liked_user])
+      @user = User.find(params[:id])
+      @like = Like.new(user_id: @user.id, liked_user_id: liked_user)
+      @like.save
+      redirect_to questionnaires_path
+    end
+
+    def add_unlike
+      @user = User.find(params[:id])
+      liked_user = (params[:liked_user])
+      Like.where(user_id: @user.id).where(liked_user_id: liked_user).destroy_all
+      redirect_to questionnaires_path
+      
+    end
         
 
     private

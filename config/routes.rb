@@ -16,11 +16,18 @@ Rails.application.routes.draw do
         member do
             get :ban
             get :unban
+            get :add_like
+            get :add_unlike
         end
     end
     
+
     resources :questionnaires
     resources :reports
+    resources :chats 
+
+
+
     resources :conversations, only: [:create] do
         member do
             post :close

@@ -3,6 +3,8 @@ class User < ApplicationRecord
     VALID_EMAIL_REGEX = /\As\d{7}@student\.rmit\.edu\.au\z/i
     has_many :questionnaire
     has_many :report
+    has_many :match_or_like
+    serialize :liked_users
     has_secure_password
     before_save {self.email = email.downcase}
     validates :name, presence: true

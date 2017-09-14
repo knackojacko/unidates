@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170912120420) do
+ActiveRecord::Schema.define(version: 20170914011131) do
 
   create_table "conversations", force: :cascade do |t|
     t.integer "recipient_id"
@@ -20,6 +20,13 @@ ActiveRecord::Schema.define(version: 20170912120420) do
     t.index ["recipient_id", "sender_id"], name: "index_conversations_on_recipient_id_and_sender_id", unique: true
     t.index ["recipient_id"], name: "index_conversations_on_recipient_id"
     t.index ["sender_id"], name: "index_conversations_on_sender_id"
+  end
+
+  create_table "likes", force: :cascade do |t|
+    t.integer "liked_user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "user_id"
   end
 
   create_table "messages", force: :cascade do |t|
@@ -49,8 +56,6 @@ ActiveRecord::Schema.define(version: 20170912120420) do
   end
 
   create_table "reports", force: :cascade do |t|
-    t.string "name"
-    t.string "email"
     t.string "problem"
     t.integer "reported_user_id"
     t.datetime "created_at", null: false
@@ -64,10 +69,10 @@ ActiveRecord::Schema.define(version: 20170912120420) do
     t.string "gender"
     t.string "preference"
     t.date "dob"
+    t.boolean "is_admin", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "password_digest"
-    t.boolean "is_admin", default: false
     t.string "remember_digest"
     t.boolean "ban", default: false
     t.index ["email"], name: "index_users_on_email", unique: true

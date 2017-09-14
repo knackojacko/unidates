@@ -12,9 +12,37 @@
         <h5><%= user[:gender] %></h5>
         <h5><%= user[:dob] %>,</h5>
         <h6>Matched: <%= user[:count] %>0%</h6>
-        <%= link_to 'chat', conversations_path(user_id: user[:id]), remote: true, method: :post %>
-     
+        
+        
+        <% if Like.exists?(user_id: user[:id], liked_user_id: current_user.id)%>
+          <p> <%= user[:name]%> has liked you</p>
+        <%end%>
+        
+        <% if Like.where(user_id: current_user.id).where(liked_user_id: user[:id]).empty? %>
+          <%= link_to "Like", add_like_user_path(current_user, liked_user: user[:id]), class: 'btn btn-success btn-sm' %>
+        <%else%>
+          <%= link_to "Unlike", add_unlike_user_path(current_user, liked_user: user[:id]), class: 'btn btn-success btn-sm' %>
+        <%end%>
+        
+        <%if Like.exists?(user_id: current_user.id, liked_user_id: user[:id]) && Like.exists?(user_id: user[:id], liked_user_id: current_user.id) %>
+          
+          <p>MATCH!</p>
+        <%end%>
+
+
+        
+        <%-# link_to 'chat', conversations_path(user_id: user[:id]), remote: true, method: :post -%>
+
+          
+        
+
+
+
+
       </div>
     </div>
   </div>
 </div>
+
+
+
