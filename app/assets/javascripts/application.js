@@ -17,8 +17,19 @@
 //= require bootstrap-sprockets
 //= require_tree .
 
-//START FILE
+//START OF FILE
 $( document ).on('turbolinks:load', function() {
+  
+  
+/* ------------------------ START: APPLICATION WIDE ------------------------- */
+// Login success popup
+  setTimeout(function(){
+      $('.alert').fadeOut();
+  }, 3000);
+/* ------------------------- END: APPLICATION WIDE -------------------------- */
+
+
+
 
 /* -------------------------- START: PROFILE PAGE --------------------------- */
     $("#profileImage").click(function(e) {
@@ -87,30 +98,28 @@ $( document ).on('turbolinks:load', function() {
       });
 /* ------------------------- END: PREFERENCES PAGE -------------------------- */
 
-// END FILE
+
+
+
+/* --------------------------- START: CHATS PAGE ---------------------------- */
+  // Minimising chat window
+  (function() {
+    $(document).on('click', '.toggle-window', function(e) {
+      e.preventDefault();
+      var panel = $(this).parent().parent();
+      var messages_list = panel.find('.messages-list');
+   
+      panel.find('.panel-body').toggle();
+      panel.attr('class', 'panel panel-default');
+   
+      if (panel.find('.panel-body').is(':visible')) {
+        var height = messages_list[0].scrollHeight;
+        messages_list.scrollTop(height);
+      }
+    });
+  })();
+/* ---------------------------- END: CHATS PAGE ----------------------------- */
+
+
+// END OF FILE
 });
-
-$(document).ready(function(){
-    setTimeout(function(){
-        $('.alert').fadeOut();
-    }, 3000);
-});
-
-/*minimizing chat window */
-(function() {
-  $(document).on('click', '.toggle-window', function(e) {
-    e.preventDefault();
-    var panel = $(this).parent().parent();
-    var messages_list = panel.find('.messages-list');
- 
-    panel.find('.panel-body').toggle();
-    panel.attr('class', 'panel panel-default');
- 
-    if (panel.find('.panel-body').is(':visible')) {
-      var height = messages_list[0].scrollHeight;
-      messages_list.scrollTop(height);
-    }
-  });
-})();
-
-/* ------------------------- END -------------------------- */ 
