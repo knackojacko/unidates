@@ -75,7 +75,14 @@ class UsersController < ApplicationController
     def add_unlike
       @user = User.find(params[:id])
       liked_user = (params[:liked_user])
+      
+      if  helpers.find_match?(@user.id, liked_user) != true
+         Matche.where(user_id: @user.id).where(matched_user_id: liked_user).destroy_all 
+         flash[:success] = "Removed from chat!"
+      end
+      
       Like.where(user_id: @user.id).where(liked_user_id: liked_user).destroy_all
+      
       redirect_to questionnaires_path
       
     end
@@ -89,17 +96,6 @@ class UsersController < ApplicationController
       @match2.save
       redirect_to questionnaires_path
     end
-
-    def add_unmatch
-      @user = User.find(params[:id])
-      matched_user = (params[:matched_user])
-      Matche.where(user_id: @user.id).where(matched_user_id: matched_user).destroy_all
-      Matche.where(user_id: matched_user).where(user_id: @user.id).destroy_all
-      redirect_to chats_path
-    end
-
-    
-        
 
     private
 
