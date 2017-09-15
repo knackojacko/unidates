@@ -79,6 +79,26 @@ class UsersController < ApplicationController
       redirect_to questionnaires_path
       
     end
+
+    def add_match
+      matched_user = (params[:matched_user])
+      @user = User.find(params[:id])
+      @matche = Matche.new(user_id: @user.id, matched_user_id: matched_user)
+      @match2 = Matche.new(user_id: matched_user, matched_user_id: @user.id)
+      @matche.save
+      @match2.save
+      redirect_to questionnaires_path
+    end
+
+    def add_unmatch
+      @user = User.find(params[:id])
+      matched_user = (params[:matched_user])
+      Matche.where(user_id: @user.id).where(matched_user_id: matched_user).destroy_all
+      Matche.where(user_id: matched_user).where(user_id: @user.id).destroy_all
+      redirect_to chats_path
+    end
+
+    
         
 
     private

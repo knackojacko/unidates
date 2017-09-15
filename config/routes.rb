@@ -18,6 +18,8 @@ Rails.application.routes.draw do
             get :unban
             get :add_like
             get :add_unlike
+            get :add_match
+            get :add_unmatch
         end
     end
     
