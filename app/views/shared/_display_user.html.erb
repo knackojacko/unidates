@@ -26,7 +26,12 @@
         
         <%if Like.exists?(user_id: current_user.id, liked_user_id: user[:id]) && Like.exists?(user_id: user[:id], liked_user_id: current_user.id) %>
           
-          <p>MATCH!</p>
+          <% if Matche.where(user_id: current_user.id).where(matched_user_id: user[:id]).empty? %>
+            <%= link_to "Add", add_match_user_path(current_user, matched_user: user[:id]), class: 'btn btn-primary btn-sm' %>
+          <%else%>
+            <p>Added to chat</p>
+          <%end%>
+          
         <%end%>
 
 

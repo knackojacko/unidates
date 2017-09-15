@@ -3,11 +3,9 @@
     <div class="col-md-9">
       <ul id="conversations-list">
         <!--Prevent users error with null conversations-->
-        <% if !@conversations.nil? %>
             <% @conversations.each do |conversation| %>
                 <%= render 'conversations/conversation', conversation: conversation, user: current_user %>
             <% end %>
-        <% end %>
       </ul>
     </div>
 

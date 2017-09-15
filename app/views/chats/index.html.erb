@@ -1,1 +1,18 @@
-<% render :partial => 'shared/chat_box' =%>
+
+  <div class="col-md-9">
+      <ul id="conversations-list">
+        <% current_user.matche.each do |user| %>
+        <% matched_user = find_user(user.matched_user_id) %>
+          <% @conversations.each do |conversation| %>
+            <% if conversation.sender_id == current_user.id && conversation.recipient_id == user.matched_user_id %>
+              <%= render 'conversations/conversation', conversation: conversation, user: current_user %>
+            <%end%>
+          <%end%>
+            <li><%= link_to matched_user.name, conversations_path(user_id: user.matched_user_id), remote: true, method: :post, 
+            class: 'btn btn-success btn-sm' %></li>
+        <%end%>
+      </ul>
+    </div>
+
+
+

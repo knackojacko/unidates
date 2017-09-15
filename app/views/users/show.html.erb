@@ -49,13 +49,7 @@
 
           <% if @user != current_user %>
               <%= link_to "Report", new_report_path(reported_id: @user.id), class: "btn btn-danger btn-block" %>
-              <% @user.match_or_like.each do |like| %>
-                <% if like.liked_user_id == @user.id %>
-                  <%= link_to "Unlike", add_like_user_path(current_user, liked_user: user[:id])%>
-                <%else%>
-                  <%= link_to "Like", add_like_user_path(current_user, liked_user: user[:id])%>
-                <%end%>
-              <%end%>
+              
           <% end %>
           
 
