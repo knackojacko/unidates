@@ -8,7 +8,8 @@
 </p>
 
 <p>
-   To login to the site, just follow this link: <%= @url %>.
+   To confirm your email click the link 
+   <%= confirm_email_user_url(@user.confirm_token) %>
 </p>
 
 <p>Thanks for joining and have a great day!</p>

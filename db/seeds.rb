@@ -7,32 +7,32 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.create(name: "Bill", email: "s1122123@student.rmit.edu.au", gender: "Man", 
-    preference: "Women", dob: "1997-09-01", password: "12345678", password_confirmation: "12345678"  )
+    preference: "Women", dob: "1997-09-01", password: "12345678", password_confirmation: "12345678", email_confirmed: true)
     
 User.create(name: "Jessica", email: "s3333333@student.rmit.edu.au", gender: "Woman", 
-    preference: "Women", dob: "1996-05-02", password: "12345678", password_confirmation: "12345678"  )
+    preference: "Women", dob: "1996-05-02", password: "12345678", password_confirmation: "12345678", email_confirmed: true  )
 
 User.create(name: "Matt", email: "s2222222@student.rmit.edu.au", gender: "Man", 
-    preference: "Both", dob: "1991-01-01", password: "12345678", password_confirmation: "12345678"  )
+    preference: "Both", dob: "1991-01-01", password: "12345678", password_confirmation: "12345678", email_confirmed: true )
 
 User.create(name: "Lisa", email: "s4444444@student.rmit.edu.au", gender: "Woman", 
-    preference: "Men", dob: "1993-04-23", password: "12345678", password_confirmation: "12345678"  )
+    preference: "Men", dob: "1993-04-23", password: "12345678", password_confirmation: "12345678", email_confirmed: true  )
 
 
 User.create(name: "Conner", email: "s5555555@student.rmit.edu.au", gender: "Man", 
-    preference: "Women", dob: "1995-05-21", password: "12345678", password_confirmation: "12345678"  )
+    preference: "Women", dob: "1995-05-21", password: "12345678", password_confirmation: "12345678", email_confirmed: true )
     
 User.create(name: "Jasmin", email: "s6666666@student.rmit.edu.au", gender: "Woman", 
-    preference: "Women", dob: "1992-05-11", password: "12345678", password_confirmation: "12345678"  )
+    preference: "Women", dob: "1992-05-11", password: "12345678", password_confirmation: "12345678", email_confirmed: true  )
 
 User.create(name: "Sui", email: "s7777777@student.rmit.edu.au", gender: "Woman", 
-    preference: "Both", dob: "1990-08-12", password: "12345678", password_confirmation: "12345678"  )
+    preference: "Both", dob: "1990-08-12", password: "12345678", password_confirmation: "12345678", email_confirmed: true )
 
 User.create(name: "Rocky", email: "s8888888@student.rmit.edu.au", gender: "Man", 
-    preference: "Men", dob: "1998-04-11", password: "12345678", password_confirmation: "12345678"  )
+    preference: "Men", dob: "1998-04-11", password: "12345678", password_confirmation: "12345678")
     
 
-User.new({name: 'admin', email: 'admin@rmit.edu.au', password: 'password', password_confirmation: 'password', is_admin: true}).save(validate: false)
+User.new({name: 'admin', email: 'admin@rmit.edu.au', password: 'password', password_confirmation: 'password', is_admin: true, email_confirmed: true}).save(validate: false)
 
 Questionnaire.create(q1:'Cats', q2:'Walk_On_The_Beach', q3:'Movies', q4:'Dining_At_A_Restaurant', q5:'Video_Games', q6:'Android', q7:'Art', q8:'Paris', q9:'Drinks_At_A_Bar', q10:'Building_8_Escalators', user_id: 1)
 

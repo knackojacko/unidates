@@ -18,11 +18,11 @@ class UsersController < ApplicationController
     def create
         @user = User.new(user_params)
         if @user.save
-            log_in @user
             NewUserEmailMailer.notify_user(@user).deliver
             flash[:success] = "Check your email!"
             redirect_to root_url
         else
+            flash[:danger] = "Something went wrong"
             render 'new'
         end
     end
@@ -95,6 +95,19 @@ class UsersController < ApplicationController
       @matche.save
       @match2.save
       redirect_to questionnaires_path
+    end
+
+    def confirm_email
+        user = User.find_by_confirm_token(params[:id])
+        if user
+            user.email_activate
+            flash[:success] = "Welcome to the UniDates! Your email has been confirmed.
+            Please log in."
+            redirect_to login_path
+        else
+            flash[:error] = "Sorry. User does not exist"
+            redirect_to root_url
+        end
     end
 
     private

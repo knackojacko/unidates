@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+    before_create :confirmation_token
     attr_accessor :remember_token    
     VALID_EMAIL_REGEX = /\As\d{7}@student\.rmit\.edu\.au\z/i
     has_many :questionnaire
@@ -15,7 +16,6 @@ class User < ApplicationRecord
     validates :preference, presence: true
     validates :password, presence: true, confirmation: true, length: {in: 8..35}
     validates :password_confirmation, presence: true
-
   class << self
     # Returns the hash digest of the given string.
     def digest(string)
@@ -52,5 +52,18 @@ class User < ApplicationRecord
     def forget
         update_attribute(:remember_digest, nil)
     end
-    
+
+    def email_activate
+      self.email_confirmed = true
+      self.confirm_token = nil
+      save!(:validate => false)
+    end
+
+
+    private
+      def confirmation_token
+        if self.confirm_token.blank?
+          self.confirm_token = SecureRandom.urlsafe_base64.to_s
+        end
+      end
 end

@@ -5,15 +5,21 @@ class SessionsController < ApplicationController
   def create
     user = User.find_by(email: params[:session][:email].downcase)
     if user && user.authenticate(params[:session][:password])
-      log_in user
-      remember user
-      params[:session][:remember_me] == '1' ? remember(user) : forget(user)
-      if current_user.is_admin?
-        flash[:success] = "Hello admin"
-        redirect_to users_path
+      if user.email_confirmed
+        log_in user
+        remember user
+        params[:session][:remember_me] == '1' ? remember(user) : forget(user)
+        
+        if current_user.is_admin?
+          flash[:success] = "Hello admin"
+          redirect_to users_path
+        else
+          flash[:success] = "Login Successful"
+          redirect_to user
+        end
       else
-        flash[:success] = "Login Successful"
-        redirect_to user
+        flash[:danger] = 'Please confirm your email'
+        render 'new'
       end
     else
       flash.now[:danger] = 'Invalid email/password combination'

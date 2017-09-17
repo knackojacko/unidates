@@ -19,7 +19,7 @@ Rails.application.routes.draw do
             get :add_like
             get :add_unlike
             get :add_match
-            get :add_unmatch
+            get :confirm_email
         end
     end
     
