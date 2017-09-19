@@ -1,4 +1,4 @@
-<%= form_for(@user) do |f| %>
+<%= form_for(@user, multipart: true) do |f| %>
     <h2 style="text-align: center; color: silver!important;;">Come and Study!</h2>
     <div class="form-group">
       <%= f.text_field :name, placeholder: 'first name ', class: 'form-control custom' %>
@@ -9,18 +9,28 @@
     </div>
 
     <div class="form-group">
-      <%= f.label :dob, 'birthday', class: 'form-control custom-label' %>
+      <%= f.label :dob, 'Birthday', class: 'form-control custom-label' %>
       <%= f.date_select :dob, {:order => [:day, :month, :year], default: 18.years.ago, :start_year => 2017, :end_year => 1905}, {:class => 'form-control custom-date-select'} %>
     </div>
 
     <div class="form-group">
-      <%= f.label :gender, 'gender', class: 'form-control custom-label-nospace' %>
+      <%= f.label :gender, 'Gender', class: 'form-control custom-label-nospace' %>
       <%= f.select(:gender, ['Man', 'Woman'], {:prompt => 'I am a...'}, {:class => 'form-control custom-select'}) %>
     </div>
 
     <div class="form-group">
-      <%= f.label :preference, 'preference', class: 'form-control custom-label-nospace' %>
+      <%= f.label :preference, 'Preference', class: 'form-control custom-label-nospace' %>
       <%= f.select(:preference, ['Men', 'Women', 'Both'], {:prompt => 'I\'m interested in...'}, {:class => 'form-control custom-select'}) %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :description, 'Description', class: 'form-control custom-label-nospace' %>
+      <%= f.text_field :description, class: 'form-control custom-select' %>
+    </div>
+              
+    <div class="field">
+      <%= f.label :avatar %>
+      <%= f.file_field :avatar %>
     </div>
 
     <div class="form-group">

@@ -20,6 +20,7 @@ Rails.application.routes.draw do
             get :add_unlike
             get :add_match
             get :confirm_email
+            post :additional_user_information
         end
     end
     

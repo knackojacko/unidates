@@ -8,12 +8,10 @@
 
         <div class="content" style="position:relative;">
           <p>
+        
+        <%= image_tag @user.avatar.url(:medium) %>
 
-          <div id="profile-container">
-            <image id="profileImage" src=<%= image_path('default_profile.png')%>/>
-          </div>
-
-          <input id="imageUpload" type="file" name="profile_photo" placeholder="Photo" required="" capture>
+            
 
           <i><h2><%= @user.name %></i></h2>
 
@@ -25,6 +23,9 @@
 
           <br><strong>I'm A:&nbsp;</strong><i><%= @user.gender %></i>
           <br><strong>I'm Interested In:&nbsp;</strong><i><%= @user.preference %></i>
+          
+
+          <p> description: <%= @user.description %></p>
 
           <br>
           <br>
@@ -49,7 +50,6 @@
 
           <% if @user != current_user %>
               <%= link_to "Report", new_report_path(reported_id: @user.id), class: "btn btn-danger btn-block" %>
-              
           <% end %>
           
 

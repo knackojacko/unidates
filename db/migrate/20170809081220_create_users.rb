@@ -6,6 +6,7 @@ class CreateUsers < ActiveRecord::Migration[5.1]
       t.string :gender
       t.string :preference
       t.date :dob
+      t.text    :description
       t.boolean  "is_admin",        default: false
       t.timestamps
     end

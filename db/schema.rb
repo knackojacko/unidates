@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170916035657) do
+ActiveRecord::Schema.define(version: 20170919124622) do
 
   create_table "conversations", force: :cascade do |t|
     t.integer "recipient_id"
@@ -76,6 +76,7 @@ ActiveRecord::Schema.define(version: 20170916035657) do
     t.string "gender"
     t.string "preference"
     t.date "dob"
+    t.text "description"
     t.boolean "is_admin", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -84,6 +85,10 @@ ActiveRecord::Schema.define(version: 20170916035657) do
     t.boolean "ban", default: false
     t.boolean "email_confirmed", default: false
     t.string "confirm_token"
+    t.string "avatar_file_name"
+    t.string "avatar_content_type"
+    t.integer "avatar_file_size"
+    t.datetime "avatar_updated_at"
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 

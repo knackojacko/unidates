@@ -6,6 +6,11 @@ class User < ApplicationRecord
     has_many :report
     has_many :like
     has_many :matche
+    has_attached_file :avatar, styles: {
+      thumb: '100x100>',
+      square: '200x200#',
+      medium: '300x300>'
+    }
     serialize :liked_users
     has_secure_password
     before_save {self.email = email.downcase}
@@ -16,6 +21,10 @@ class User < ApplicationRecord
     validates :preference, presence: true
     validates :password, presence: true, confirmation: true, length: {in: 8..35}
     validates :password_confirmation, presence: true
+    validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
+
+
+  
   class << self
     # Returns the hash digest of the given string.
     def digest(string)
