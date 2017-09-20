@@ -6,6 +6,7 @@ class User < ApplicationRecord
     has_many :report
     has_many :like
     has_many :matche
+
     has_attached_file :avatar, styles: {
       square: '200x200#',
     }
@@ -17,8 +18,12 @@ class User < ApplicationRecord
     validates :dob, presence: true
     validates :gender, presence: true
     validates :preference, presence: true
-    validates :password, presence: true, confirmation: true, length: {in: 8..35}
-    validates :password_confirmation, presence: true
+
+    # Updated validation to skip password validation on update (as there is no password to validate)
+    validates :password, presence: true, confirmation: true, length: {in: 8..35}, on: :create
+    validates :password, length: {in: 8..35}, on: :update, allow_blank: true
+    validates :password_confirmation, presence: true, on: :create
+    validates :password_confirmation, presence: true, on: :update, allow_blank: true
     validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
 
 

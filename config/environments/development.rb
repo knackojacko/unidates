@@ -76,5 +76,4 @@ config.paperclip_defaults = {
     s3_region: 'ap-southeast-2',
   }
 }
-
 end
