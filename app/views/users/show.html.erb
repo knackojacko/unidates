@@ -4,55 +4,56 @@
 
     <div class="col-sm-6 col-xs-12" align="center">
       <div class="container custom">
-        <div class="glass-back"></div>
+        <div id="glass-pane">
 
-        <div class="content" style="position:relative;">
-        
-        <%= image_tag @user.avatar.url(:square) %>
+          <div class="content" style="position:relative;">
 
-            
-
-          <i><h2><%= @user.name %></i></h2>
-
-          <hr>
-
-          <strong>Email:&nbsp;</strong><i><%= @user.email %></i>
-          <br><strong>Birthday:&nbsp;</strong><i><%= @user.dob %></i><br>
+            <%= image_tag @user.avatar.url(:square) %>
 
 
-          <br><strong>I'm A:&nbsp;</strong><i><%= @user.gender %></i>
-          <br><strong>I'm Interested In:&nbsp;</strong><i><%= @user.preference %></i>
-          
 
-          <p> description: <%= @user.description %></p>
+            <i><h2><%= @user.name %></i></h2>
 
-          <br>
-          <br>
-          <strong>My Preferences:</strong>
-          <br>
-          <i>
-            <% @user.questionnaire.each do |questionnaire| %>
-                <%= questionnaire.q1 %>,
-                <%= questionnaire.q2 %>,
-                <%= questionnaire.q3 %>,
-                <%= questionnaire.q4 %>,
-                <%= questionnaire.q5 %>,
-                <%= questionnaire.q6 %>,
-                <%= questionnaire.q7 %>,
-                <%= questionnaire.q8 %>,
-                <%= questionnaire.q9 %>,
-                <%= questionnaire.q10 %>
+            <hr>
+
+            <strong>Email:&nbsp;</strong><i><%= @user.email %></i>
+            <br><strong>Birthday:&nbsp;</strong><i><%= @user.dob %></i><br>
+
+
+            <br><strong>I'm A:&nbsp;</strong><i><%= @user.gender %></i>
+            <br><strong>I'm Interested In:&nbsp;</strong><i><%= @user.preference %></i>
+
+
+            <p> description: <%= @user.description %></p>
+
+            <br>
+            <br>
+            <strong>My Preferences:</strong>
+            <br>
+            <i>
+              <% @user.questionnaire.each do |questionnaire| %>
+                  <%= questionnaire.q1 %>,
+                  <%= questionnaire.q2 %>,
+                  <%= questionnaire.q3 %>,
+                  <%= questionnaire.q4 %>,
+                  <%= questionnaire.q5 %>,
+                  <%= questionnaire.q6 %>,
+                  <%= questionnaire.q7 %>,
+                  <%= questionnaire.q8 %>,
+                  <%= questionnaire.q9 %>,
+                  <%= questionnaire.q10 %>
+              <% end %>
+            </i>
+            <br>
+            <br>
+
+            <% if @user != current_user %>
+                <%= link_to "Report", new_report_path(reported_id: @user.id), class: "btn btn-danger btn-block" %>
             <% end %>
-          </i>
-          <br>
-          <br>
 
-          <% if @user != current_user %>
-              <%= link_to "Report", new_report_path(reported_id: @user.id), class: "btn btn-danger btn-block" %>
-          <% end %>
-          
 
-        </div> <!--END CONTENT-->
+          </div> <!--END CONTENT-->
+        </div>
       </div>
     </div>
 

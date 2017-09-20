@@ -4,33 +4,37 @@
   <%= stylesheet_link_tag 'application', media: 'all',
                           'data-turbolinks-track': 'reload' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
 
   <% if logged_in? %>
       <style>
         body {
           /*https://www.peopleperhour.com/freelancer/thomas/designer-illustrator/361235*/
           background: url(<%= image_path('temporary_background.jpg') %>) no-repeat;
+          background-position: center;
           background-size: cover;
           background-attachment: fixed;
           height: 100vh !important;
           width: 100vw !important;
         }
 
-        .glass-back:before {
-          background: url(<%= image_path('temporary_background.jpg') %>) no-repeat;
+        #glass-pane:before {
+          background: url(<%= image_path('temporary_background.jpg') %>) center fixed;
         }
       </style>
   <% else %>
       <style>
         body {
           background: url(<%= image_path('main_back.jpg') %>) no-repeat;
+          background-position: center;
           background-size: cover;
           background-attachment: fixed;
           height: 100vh !important;
           width: 100vw !important;
         }
-        .glass-back:before {
-          background: url(<%= image_path('main_back.jpg') %>) no-repeat;
+        #glass-pane:before {
+          background: url(<%= image_path('main_back.jpg') %>) center fixed;
         }
       </style>
   <% end %>

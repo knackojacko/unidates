@@ -4,6 +4,7 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+
 /* -------------------- START: SIGN UP / LOG IN PAGES ----------------------- */
 .container.custom {
   width: auto;
@@ -18,38 +19,41 @@
 }
 
 // Used for very small screens
-.col-xs-8 > .container.custom.signup{
+.col-xs-8 > .container.custom.signup {
   margin-top: 15px;
 }
 
-.glass-back, .content {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
 
-.btn.btn-primary{
+.btn.btn-primary {
   width: 90% !important;
 }
 
-.glass-back {
-  background: inherit;
-  overflow: hidden;
+#glass-pane {
+  z-index: 1;
+  position: relative;
+  width: 100%;
+  height: auto;
   border-radius: 15px;
+  overflow:hidden;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 50px;
 }
 
-.glass-back:before {
-  width: 110%;
-  height: 110%;
-  content: "";
-  position: inherit;
+#glass-pane:before {
+  z-index: -1;
+  position: absolute;
+  content: '';
+  background: url('main_back.jpg') center fixed;
+  background-size: cover !important;
+  width:110%;
+  height:110%;
   top: -10px;
   left: -10px;
-  /*background: url("main_back_edit.jpg") no-repeat;*/
-  box-shadow: inset 0 0 0 300px rgba(200, 200, 200, 0.3);
-  filter: blur(10px) !important;
+  bottom: 0;
+  right: 0;
+  box-shadow: inset 0 0 0 350px rgba(50, 50, 50, 0.2);
+  filter: blur(20px);
 }
 
 .content {
@@ -109,7 +113,7 @@
   border: 0;
   font-size: 15px;
   font-weight: normal;
-  color: #9b9b9b;
+  color: #ffffff;
 
   // Remove box shadow and radius from bootstrap
   border-radius: 0px !important;
@@ -126,7 +130,7 @@
   border: 0;
   font-size: 15px;
   font-weight: normal;
-  color: #9b9b9b;
+  color: white;
 
   // Remove box shadow and radius from bootstrap
   border-radius: 0px !important;
@@ -139,11 +143,13 @@
   outline: 0;
   border: 0;
   border-bottom: 1px solid rgb(255, 255, 255);
+  -webkit-appearance: none;
+  -webkit-border-radius: 0px;
   margin-top: 20px;
   margin-bottom: 15px;
   padding-bottom: 10px;
   font-size: 15px;
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 1);
 
   // Remove box shadow and radius from bootstrap
   border-radius: 0px !important;
@@ -169,6 +175,10 @@
   display: inline-block;
 
   overflow: visible;
+}
+
+input::-webkit-input-placeholder {
+  color: white !important;
 }
 
 .field_with_errors {

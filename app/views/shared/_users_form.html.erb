@@ -1,5 +1,5 @@
 <%= form_for(@user, multipart: true) do |f| %>
-    <h2 style="text-align: center; color: silver!important;;">Come and Study!</h2>
+    <h2 style="text-align: center">Come and Study!</h2>
     <div class="form-group">
       <%= f.text_field :name, placeholder: 'first name ', class: 'form-control custom' %>
     </div>
@@ -9,22 +9,21 @@
     </div>
 
     <div class="form-group">
-      <%= f.label :dob, 'Birthday', class: 'form-control custom-label' %>
+      <%= f.label :dob, 'birthday', class: 'form-control custom-label' %>
       <%= f.date_select :dob, {:order => [:day, :month, :year], default: 18.years.ago, :start_year => 2017, :end_year => 1905}, {:class => 'form-control custom-date-select'} %>
     </div>
 
     <div class="form-group">
-      <%= f.label :gender, 'Gender', class: 'form-control custom-label-nospace' %>
+      <%= f.label :gender, 'gender', class: 'form-control custom-label-nospace' %>
       <%= f.select(:gender, ['Man', 'Woman'], {:prompt => 'I am a...'}, {:class => 'form-control custom-select'}) %>
     </div>
 
     <div class="form-group">
-      <%= f.label :preference, 'Preference', class: 'form-control custom-label-nospace' %>
+      <%= f.label :preference, 'preference', class: 'form-control custom-label-nospace' %>
       <%= f.select(:preference, ['Men', 'Women', 'Both'], {:prompt => 'I\'m interested in...'}, {:class => 'form-control custom-select'}) %>
     </div>
 
     <div class="form-group">
-      <%= f.label :description, 'Description', class: 'form-control custom-label-nospace' %>
       <%= f.text_field :description, class: 'form-control custom-select' %>
     </div>
 
@@ -44,6 +43,6 @@
           <%= f.password_field :password_confirmation, placeholder: 'confirm password', class: 'form-control custom', :style => 'margin-bottom: 40px' %>
         </div>
     <% end %>
-    <%= f.submit yield(:button_text), class: 'btn btn-block btn-success' %>
+    <%= f.submit yield(:button_text), class: 'btn btn-success', :style => 'width: 50%' %>
 
 <% end %>
