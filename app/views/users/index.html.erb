@@ -1,8 +1,11 @@
-<div class="form-group">
+<h3 align="center">UniDates Users</h3>
+<div class="container custom">
+<div class="glass-back"></div>
+<div class="content" style="position:relative;"></div>
 <% get_all_users.each do |user| %>
-    <p><%= user.name %></p>
+<div class="col-xs-8 col-md-6 col-lg-4">
+    <h4><%= user.name %></h4>
     <p><%= user.email %></p>
-
     <% if current_user.is_admin? %>
         <%= link_to "Profile", user_path(user), class: "btn btn-success btn-sm" %>
         
@@ -10,10 +13,8 @@
             <%= link_to "Ban", ban_user_path(user), class: "btn btn-danger btn-sm" %>
         <%else%>
             <%= link_to "Unban", unban_user_path(user), class: "btn btn-danger btn-sm" %>
+          </div>
         <%end%>
-        
-    <% end %>
-
-    </br>
+      </div>
+    <%end%>
 <%end%>
-</div>
