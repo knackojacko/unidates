@@ -24,7 +24,7 @@
     </div>
 
     <div class="form-group">
-      <%= f.text_field :description, class: 'form-control custom-select' %>
+      <%= f.text_field :description, placeholder: 'description', class: 'form-control custom-select' %>
     </div>
 
     <div class="field">
@@ -33,8 +33,8 @@
     </div>
 
     <!--Only show password for signup page-->
-    <% url = request.path_info %>
-    <% if url.include?('signup') %>
+    <% url = request.original_url %>
+    <% if !url.match('users\/\d\/edit')%>
         <div class="form-group">
           <%= f.password_field :password, placeholder: 'password (keep it sneaky)', class: 'form-control custom' %>
         </div>
