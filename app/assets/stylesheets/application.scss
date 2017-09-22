@@ -31,7 +31,10 @@ body {
   background: rgba(50, 50, 50, 0.7);
   border: none; // Remove bootstrap border for cleaner navbar
   color: white;
+  font-size: 50px;
   filter: none;
+  border-bottom-style: solid;
+  border-bottom-width: thin;
 }
 
 .navbar-brand.logo {

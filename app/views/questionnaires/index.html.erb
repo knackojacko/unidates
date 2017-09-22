@@ -14,43 +14,85 @@
             <% current_user.questionnaire.each do |user_questionnaire| %>
 
                 <% if user_questionnaire.q1 == other_questionnaire.q1 %>
-                    <% count += 1 %>
+                    <%
+                      priority = Float((user_questionnaire.pq1 - other_questionnaire.pq1).abs) / 10.0
+                      count += 1 - priority
+                      puts "count: ", count
+                    %>
+
                 <% end %>
 
                 <% if user_questionnaire.q2 == other_questionnaire.q2 %>
-                    <% count += 1 %>
+                    <%
+                      priority = Float((user_questionnaire.pq2 - other_questionnaire.pq2).abs)/ 10.0
+                      count += 1 - priority
+                      puts "count: ", count
+                    %>
                 <% end %>
 
                 <% if user_questionnaire.q3 == other_questionnaire.q3 %>
-                    <% count += 1 %>
+                    <%
+                      priority = Float((user_questionnaire.pq3 - other_questionnaire.pq3).abs) / 10
+                      puts "priority", priority
+                      count += 1 - priority
+                      puts "count: ", count
+                    %>
                 <% end %>
 
                 <% if user_questionnaire.q4 == other_questionnaire.q4 %>
-                    <% count += 1 %>
+                    <%
+                      priority = Float((user_questionnaire.pq4 - other_questionnaire.pq4).abs)/ 10.0
+                      count += 1 - priority
+                      puts "count: ", count
+                    %>
                 <% end %>
 
                 <% if user_questionnaire.q5 == other_questionnaire.q5 %>
-                    <% count += 1 %>
+                    <%
+                      priority = Float((user_questionnaire.pq5 - other_questionnaire.pq5).abs)/ 10.0
+                      count += 1 - priority
+                      puts "count: ", count
+                    %>
                 <% end %>
 
                 <% if user_questionnaire.q6 == other_questionnaire.q6 %>
-                    <% count += 1 %>
+                    <%
+                      priority = Float((user_questionnaire.pq6 - other_questionnaire.pq6).abs)/ 10.0
+                      count += 1 - priority
+                      puts "count: ", count
+                    %>
                 <% end %>
 
                 <% if user_questionnaire.q7 == other_questionnaire.q7 %>
-                    <% count += 1 %>
+                    <%
+                      priority = Float((user_questionnaire.pq7 - other_questionnaire.pq7).abs)/ 10.0
+                      count += 1 - priority
+                      puts "count: ", count
+                    %>
                 <% end %>
 
                 <% if user_questionnaire.q8 == other_questionnaire.q8 %>
-                    <% count += 1 %>
+                    <%
+                      priority = Float((user_questionnaire.pq8 - other_questionnaire.pq8).abs)/ 10.0
+                      count += 1 - priority
+                      puts "count: ", count
+                    %>
                 <% end %>
 
                 <% if user_questionnaire.q9 == other_questionnaire.q9 %>
-                    <% count += 1 %>
+                    <%
+                      priority = Float((user_questionnaire.pq9 - other_questionnaire.pq9).abs)/ 10.0
+                      count += 1 - priority
+                      puts "count: ", count
+                    %>
                 <% end %>
 
                 <% if user_questionnaire.q10 == other_questionnaire.q10 %>
-                    <% count += 1 %>
+                    <%
+                      priority = Float((user_questionnaire.pq10 - other_questionnaire.pq10).abs)/ 10.0
+                      count += 1 - priority
+                      puts "count: ", count
+                    %>
                 <% end %>
             <% end %>
         <% end %>

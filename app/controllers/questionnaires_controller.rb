@@ -60,7 +60,8 @@ class QuestionnairesController < ApplicationController
 
 
     def questionnaire_params
-      params.require(:questionnaire).permit(:user_id, :q1, :q2, :q3, :q4, :q5, :q6, :q7, :q8, :q9, :q10)
+      params.require(:questionnaire).permit(:user_id, :q1, :q2, :q3, :q4, :q5, :q6, :q7, :q8, :q9, :q10,
+                                            :pq1, :pq2, :pq3, :pq4, :pq5, :pq6, :pq7, :pq8, :pq9, :pq10)
     end
 
     def check_correct_user
