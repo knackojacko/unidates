@@ -1,5 +1,5 @@
 <tr>
-  <td>
+  <td height="30px">
 
     <!--If both users matched, add to chat-->
     <% if like_eachother?(current_user.id, oth_id) %>
@@ -9,15 +9,20 @@
             <p>Added to chat</p>
         <% end %>
     <% else %>
+
         <!--Like user-->
         <% if find_like?(current_user.id, oth_id) %>
-            <%= link_to "Like", add_like_user_path(current_user, liked_user: oth_id), class: 'btn btn-success btn-sm' %>
-        <!--unlike user-->
+            <!--If another user likes you, return like-->
+            <% if find_like_record?(oth_id, current_user.id) %>
+                <%= link_to "Return Like", add_like_user_path(current_user, liked_user: oth_id), class: 'btn btn-info btn-sm' %>
+                <!--Else like-->
+            <% else %>
+                <%= link_to "Like", add_like_user_path(current_user, liked_user: oth_id), class: 'btn btn-success btn-sm' %>
+            <% end %>
+            <!--unlike user-->
         <% else %>
-            <%= link_to "Unlike", add_unlike_user_path(current_user, liked_user: oth_id), class: 'btn btn-success btn-sm' %>
+            <%= link_to "Unlike", add_unlike_user_path(current_user, liked_user: oth_id), class: 'btn btn-danger btn-sm' %>
         <% end %>
     <% end %>
   </td>
 </tr>
-
-
