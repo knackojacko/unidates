@@ -1,6 +1,6 @@
 <% if find_like_record?(oth_id, current_user.id)%>
     <% oth_user = find_user(oth_id) %>
-    <p> <%= oth_user.name%> has liked you</p>
+    <p> <%= oth_user.name%> likes you</p>
 <%end%>
         
 <% if find_like?(current_user.id, oth_id) %>
