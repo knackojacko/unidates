@@ -11,6 +11,13 @@ module UsersHelper
         User.where.not(id: current_user.id).where(gender: 'Woman')
     end
     
+    def user_has_image?(user_id)
+        user = User.find(user_id)
+        
+        user.avatar?
+    end
+    
+    
     def find_user(reported_user_id)
         if reported_user_id == 0
             reported_user_id = 1

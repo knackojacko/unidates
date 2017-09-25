@@ -1,11 +1,17 @@
 <!--THE CONTAINER FOR EACH OF THE MATCHED USERS-->
-
 <div class="container custom">
   <div id="glass-pane">
     <div class="content" style="position:relative;">
       <div class="row">
         <div class="col-xs-6" style="padding-top: 1%;">
-          <%= link_to image_tag('default_profile.png', width: 'auto', height: 'auto'), user_path(user[:id]) %>
+          
+          <% if user_has_image?(user[:id]) %>
+            <% current_other_user = find_user(user[:id]) %>
+            <%= link_to image_tag(current_other_user.avatar.url(:square), class:'circle'), user_path(user[:id]) %>
+          <%else%>
+            <%= link_to image_tag('default_profile.png', width: 'auto', height: 'auto'), user_path(user[:id]) %>
+          <%end%>
+        
         </div>
         <div class="col-xs-6">
           <table>

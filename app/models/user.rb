@@ -8,7 +8,7 @@ class User < ApplicationRecord
     has_many :matche
 
     has_attached_file :avatar, styles: {
-      square: '200x200#',
+      square: '122x122#',
     }
     serialize :liked_users
     has_secure_password
