@@ -31,7 +31,10 @@ body {
   background: rgba(50, 50, 50, 0.7);
   border: none; // Remove bootstrap border for cleaner navbar
   color: white;
+  font-size: 50px;
   filter: none;
+  //border-bottom-style: solid;
+  //border-bottom-width: thin;
 }
 
 .navbar-brand.logo {
@@ -147,4 +150,20 @@ ul {
   margin-top: -20px;
   width: inherit;
   position: absolute;
+}
+
+//image circle
+
+.circle {
+	line-height: 0;		/* remove line-height */ 
+	display: inline-block;	/* circle wraps image */
+	margin: 5px;
+	border-radius: 50%;	/* relative value */
+	border: 3px solid white;/* border width   */
+	box-shadow: 0px 0px 5px rgba(0,0,0,0.4);	
+	transition: linear 0.25s;
+}
+.circle img {
+	border-radius: 50%;	/* relative value for
+				   adjustable image size */
 }

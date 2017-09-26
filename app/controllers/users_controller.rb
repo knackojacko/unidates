@@ -18,9 +18,22 @@ class UsersController < ApplicationController
 
     def create
         @user = User.new(user_params)
+
+        # Avoid email conf in development
+        if Rails.env.development?
+            @user.email_confirmed = true;
+        end
+
         if @user.save
-            NewUserEmailMailer.notify_user(@user).deliver
-            flash[:success] = "Check your email!"
+            # Development
+            if Rails.env.development?
+                flash[:success] = "Account successfully created!"
+            # Production
+            else
+                NewUserEmailMailer.notify_user(@user).deliver
+                flash[:success] = "Check your email!"
+            end
+
             redirect_to root_url
         else
             flash[:danger] = "Something went wrong"

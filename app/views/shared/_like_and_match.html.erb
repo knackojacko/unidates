@@ -1,18 +1,28 @@
-<% if find_like_record?(oth_id, current_user.id)%>
-    <% oth_user = find_user(oth_id) %>
-    <p> <%= oth_user.name%> has liked you</p>
-<%end%>
-        
-<% if find_like?(current_user.id, oth_id) %>
-    <%= link_to "Like", add_like_user_path(current_user, liked_user: oth_id), class: 'btn btn-success btn-sm' %>
-<%else%>
-    <%= link_to "Unlike", add_unlike_user_path(current_user, liked_user: oth_id), class: 'btn btn-success btn-sm' %>
-<%end%>
-        
-<%if like_eachother?(current_user.id, oth_id) %>
-    <% if find_match?(current_user.id, oth_id) %>
-        <%= link_to "Add", add_match_user_path(current_user, matched_user: oth_id), class: 'btn btn-primary btn-sm' %>
-    <%else%>
-        <p>Added to chat</p>
-    <%end%>
-<%end%>
+<tr>
+  <td height="30px">
+
+    <!--If both users matched, add to chat-->
+    <% if like_eachother?(current_user.id, oth_id) %>
+        <% if find_match?(current_user.id, oth_id) %>
+            <%= link_to "Add", add_match_user_path(current_user, matched_user: oth_id), class: 'btn btn-primary btn-sm' %>
+        <% else %>
+            <p>Added to chat</p>
+        <% end %>
+    <% else %>
+
+        <!--Like user-->
+        <% if find_like?(current_user.id, oth_id) %>
+            <!--If another user likes you, return like-->
+            <% if find_like_record?(oth_id, current_user.id) %>
+                <%= link_to "Return Like", add_like_user_path(current_user, liked_user: oth_id), class: 'btn btn-info btn-sm' %>
+                <!--Else like-->
+            <% else %>
+                <%= link_to "Like", add_like_user_path(current_user, liked_user: oth_id), class: 'btn btn-success btn-sm' %>
+            <% end %>
+            <!--unlike user-->
+        <% else %>
+            <%= link_to "Unlike", add_unlike_user_path(current_user, liked_user: oth_id), class: 'btn btn-danger btn-sm' %>
+        <% end %>
+    <% end %>
+  </td>
+</tr>

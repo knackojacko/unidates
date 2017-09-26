@@ -11,7 +11,16 @@ class CreateQuestionnaires < ActiveRecord::Migration[5.1]
       t.string :q8
       t.string :q9
       t.string :q10
-
+      t.integer :pq1
+      t.integer :pq2
+      t.integer :pq3
+      t.integer :pq4
+      t.integer :pq5
+      t.integer :pq6
+      t.integer :pq7
+      t.integer :pq8
+      t.integer :pq9
+      t.integer :pq10
       t.timestamps
     end
   end

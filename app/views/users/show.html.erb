@@ -8,9 +8,11 @@
 
           <div class="content" style="position:relative;">
 
-            <%= image_tag @user.avatar.url(:square) %>
-
-
+          <% if user_has_image?(@user.id) %>
+            <%= image_tag(@user.avatar.url(:square), class:'circle')%>
+          <%else%>
+            <%= image_tag('default_profile.png', width: 'auto', height: 'auto')%>
+          <%end%>
 
             <i><h2><%= @user.name %></i></h2>
 
