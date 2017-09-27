@@ -10,14 +10,14 @@ module UsersHelper
     def get_all_females
         User.where.not(id: current_user.id).where(gender: 'Woman')
     end
-    
+
     def user_has_image?(user_id)
         user = User.find(user_id)
-        
+
         user.avatar?
     end
-    
-    
+
+
     def find_user(reported_user_id)
         if reported_user_id == 0
             reported_user_id = 1
@@ -39,21 +39,28 @@ module UsersHelper
     end
 
     def like_eachother?(user_id, other_id)
-        Like.exists?(user_id: user_id, liked_user_id: other_id) && 
+        Like.exists?(user_id: user_id, liked_user_id: other_id) &&
             Like.exists?(user_id: other_id, liked_user_id: user_id)
     end
 
 
-
-    
     def get_user_preferences
-        
-        if current_user.preference == 'Men' 
-            users = get_all_males 
+
+        if current_user.preference == 'Men'
+            users = get_all_males
         elsif current_user.preference == 'Women'
-            users = get_all_females 
-        else 
-            users = get_all_users 
+            users = get_all_females
+        else
+            users = get_all_users
+        end
+    end
+
+    def check_errors(user, var_name)
+        if !(message = user.errors.full_messages_for(var_name)).empty?()
+            message.each do |msg|
+                @error_string = "<p>" + msg + "</p>"
+            end
+            return @error_string.html_safe
         end
     end
 end
