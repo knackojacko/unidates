@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
 
 
+  get 'password_resets/new'
+
+  get 'password_resets/edit'
+
     get 'users/new'
+
     get '/adminreports', to: 'reports#admin_index'
     root 'startup#index'
     get 'sessions/new'
@@ -38,4 +43,6 @@ Rails.application.routes.draw do
 
         resources :messages, only: [:create]
     end
+
+    resources :password_resets, only: [:new, :create, :edit, :update]
 end

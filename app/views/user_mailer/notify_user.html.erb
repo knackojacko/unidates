@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+
+<h1>Welcome to UniDates.com, <%= @user.name %></h1>
+
+<p>
+   You have successfully signed up to the UniDates system,
+   your username is: <%= @user.email %>.<br>
+</p>
+
+<p>
+   To confirm your email click the link 
+   <%= confirm_email_user_url(@user.confirm_token) %>
+</p>
+
+<p>Thanks for joining and have a great day!</p>

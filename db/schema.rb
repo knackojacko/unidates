@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170919124622) do
+ActiveRecord::Schema.define(version: 20170927022958) do
 
   create_table "conversations", force: :cascade do |t|
     t.integer "recipient_id"
@@ -57,16 +57,6 @@ ActiveRecord::Schema.define(version: 20170919124622) do
     t.string "q8"
     t.string "q9"
     t.string "q10"
-    t.integer "pq1"
-    t.integer "pq2"
-    t.integer "pq3"
-    t.integer "pq4"
-    t.integer "pq5"
-    t.integer "pq6"
-    t.integer "pq7"
-    t.integer "pq8"
-    t.integer "pq9"
-    t.integer "pq10"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"
@@ -99,6 +89,8 @@ ActiveRecord::Schema.define(version: 20170919124622) do
     t.string "avatar_content_type"
     t.integer "avatar_file_size"
     t.datetime "avatar_updated_at"
+    t.string "reset_digest"
+    t.datetime "reset_sent_at"
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 

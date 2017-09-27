@@ -24,7 +24,7 @@ class UserTest < ActiveSupport::TestCase
     assert @user.valid?
   end
   
-      test "dob should be present" do
+    test "dob should be present" do
     @user.dob = "1999-09-01"
     assert @user.valid?
   end

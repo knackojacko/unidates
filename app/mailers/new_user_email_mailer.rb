@@ -3,4 +3,5 @@ class NewUserEmailMailer < ApplicationMailer
         @user = user
         mail(to: @user.email, subject: "Welcome to UniDates")
     end
+
 end

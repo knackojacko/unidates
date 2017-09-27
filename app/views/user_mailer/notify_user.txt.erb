@@ -1,0 +1,10 @@
+Welcome to UniDates.com, <%= @user.name %>
+===============================================
+
+You have successfully signed up to UniDates system,
+your username is: <%= @user.email %>.
+
+To confirm your email click the link 
+<%= confirm_email_user_url(@user.confirm_token) %>
+
+Thanks for joining and have a great day! 
