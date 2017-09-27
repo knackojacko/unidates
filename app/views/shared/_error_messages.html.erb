@@ -6,6 +6,7 @@
             </div>
             <table class="table table-striped">
               <% @user.errors.each do |attr, msg| %>
+                  <%= puts "ATTRIBUTE: " , attr %>
                   <tr><td><%= msg %></td></tr>
               <% end %>
             </table>
