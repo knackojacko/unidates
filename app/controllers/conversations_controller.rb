@@ -2,12 +2,12 @@ class ConversationsController < ApplicationController
     def create
 
         # Close all other conversations
-        @conversations = Conversation.all
-        @conversations.each do |conversation|
-            @conversation = Conversation.find(conversation[:id])
-
-            session[:conversations].delete(@conversation.id)
-        end
+         @conversations = Conversation.all
+        # @conversations.each do |conversation|
+        #     @conversation = Conversation.find(conversation[:id])
+        #
+        #     session[:conversations].delete(@conversation.id)
+        # end
 
         # Used for debugging conversation
         # request.session.each {|key, value|
