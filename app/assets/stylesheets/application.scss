@@ -159,11 +159,44 @@ ul {
 	display: inline-block;	/* circle wraps image */
 	margin: 5px;
 	border-radius: 50%;	/* relative value */
-	border: 3px solid white;/* border width   */
+	border: 2px solid white;/* border width   */
 	box-shadow: 0px 0px 5px rgba(0,0,0,0.4);	
 	transition: linear 0.25s;
 }
 .circle img {
 	border-radius: 50%;	/* relative value for
 				   adjustable image size */
+}
+
+
+.chat-box {
+	border: solid 1px;
+	margin-top: 15px;
+	background-color: #5cb85c;
+	border-color: #4cae4c;
+}
+
+.chat-box:hover {
+  background-color:#4cae4c ;
+	border-color: #5cb85c;
+}
+
+.user-list a {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.icon {
+  margin: 5px;
+}
+
+.panel.panel-default {
+	background: rgba(45, 45, 45, 0.7);
+	border-color: rgba(43, 43, 43, 0.7);
+}
+
+.panel-default > .panel-heading {
+	color: #333333;
+	border-color: rgba(40, 40, 40, 0.7);
+	background: rgba(40, 40, 40, 0.7);
 }

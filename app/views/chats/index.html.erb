@@ -1,14 +1,29 @@
-<div class="container" style="background-color: rgba(50, 50, 50, 0.8); height: 80vh; padding-top: 15px;">
+<div class="container" style="background-color: rgba(50, 50, 50, 0.8); height: 80vh;">
 
-  <div class="row">
+  <div class="row" style="overflow-y: scroll; height: 100%">
 
     <!--User list box-->
     <div class="col-md-3">
-      <% current_user.matche.each do |user| %>
-          <% matched_user = find_user(user.matched_user_id) %>
-          <%= link_to matched_user.name, conversations_path(user_id: user.matched_user_id), remote: true, method: :post,
-                      class: 'btn btn-success btn-md btn-block' %>
-      <% end %>
+        <div class="user-list">
+          <% current_user.matche.each do |user| %>
+              <% matched_user = find_user(user.matched_user_id) %>
+              
+                <%= link_to conversations_path(user_id: user.matched_user_id), remote: true, method: :post, class: "chat-user" do%>
+                
+                  <div class="chat-box">
+                    
+                    <% if user_has_image?(matched_user.id) %>
+                      <%=image_tag(matched_user.avatar.url(:icon), class:'circle') %>
+                    <%else%>
+                      <%= image_tag('default_profile.png', class:'icon', width: '26', height: '26') %>
+                    <%end%>
+                    
+                    <%= matched_user.name %>
+                  </div>
+                
+                <%end%>
+          <% end %>
+      </div>
     </div>
 
     <!--User message-->
@@ -17,7 +32,8 @@
           <ul id="conversations-list">
 
             <% @conversations.each do |conversation| %>
-                <% if conversation.sender_id == current_user.id && conversation.recipient_id == user.matched_user_id %>
+                <% if (conversation.sender_id == current_user.id && conversation.recipient_id == user.matched_user_id) || 
+                (conversation.sender_id == user.matched_user_id && conversation.recipient_id == current_user.id) %>
                     <%= render 'conversations/conversation', conversation: conversation, user: current_user %>
                 <% end %>
             <% end %>

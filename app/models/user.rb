@@ -10,6 +10,7 @@ class User < ApplicationRecord
 
     has_attached_file :avatar, styles: {
       square: '122x122#',
+      icon: '23x23#'
     }
     serialize :liked_users
     has_secure_password
@@ -52,10 +53,12 @@ class User < ApplicationRecord
         SecureRandom.urlsafe_base64
     end
     
-    def authenticated?(remember_token)
-    return false if remember_digest.nil?
-    BCrypt::Password.new(remember_digest).is_password?(remember_token)
+    def authenticated?(attribute, token)
+      digest = send("#{attribute}_digest")
+      return false if digest.nil?
+      BCrypt::Password.new(digest).is_password?(token)
     end
+  
 
     def remember
       self.remember_token = User.new_token
