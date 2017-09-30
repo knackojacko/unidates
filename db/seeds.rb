@@ -31,7 +31,6 @@ User.create(name: "Sui", email: "s7777777@student.rmit.edu.au", gender: "Woman",
 User.create(name: "Rocky", email: "s8888888@student.rmit.edu.au", gender: "Man",
             preference: "Men", dob: "1998-04-11", password: "12345678", password_confirmation: "12345678")
 
-
 User.new({name: 'admin', email: 'admin@rmit.edu.au', password: 'password', password_confirmation: 'password', is_admin: true, email_confirmed: true}).save(validate: false)
 
 Questionnaire.create(q1: 'Cats', q2: 'Walk_On_The_Beach', q3: 'Movies', q4: 'Dining_At_A_Restaurant', q5: 'Video_Games', q6: 'Android', q7: 'Art', q8: 'Paris', q9: 'Drinks_At_A_Bar', q10: 'Building_8_Escalators',
