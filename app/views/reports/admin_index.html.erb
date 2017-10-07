@@ -1,13 +1,20 @@
 <h3 align="center">UniDates Reports</h3>
-<% @report.each do |report| %>
-    
-    <% reported_by = find_user(report.user_id)%>
-    <% reported_user = find_user(report.reported_user_id)%>
 
-    <p>Report Author: <%= reported_by.name %></p>
-    <p>Reported User: <%= reported_user.name %></p>
-    <p>Reason: <%= report.problem %></p>
+
+<div class="container" style="background-color: rgba(50, 50, 50, 0.8); height: 550px; overflow-y: scroll;">
     
-    <%= link_to "View Report", report_path(report), class: "btn btn-success btn-sm" %>
-    <%= link_to "End Report", report_path(report), method: :delete, class: "btn btn-danger btn-sm" %>
-<%end%>
+    <% @report.each do |report| %>
+        <div class="block">    
+            <% reported_by = find_user(report.user_id)%>
+            <% reported_user = find_user(report.reported_user_id)%>
+        
+            <p>Report Author: <%= reported_by.name %></p>
+            <p>Reported User: <%= reported_user.name %></p>
+            <p>Reason: <%= report.problem %></p>
+            
+            <%= link_to "View Report", report_path(report), class: "btn btn-success btn-sm" %>
+            <%= link_to "End Report", report_path(report), method: :delete, class: "btn btn-danger btn-sm" %>
+        </div>
+    <%end%>
+
+</div>

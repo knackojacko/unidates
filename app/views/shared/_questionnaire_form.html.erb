@@ -94,7 +94,7 @@
 <%= form_for(@questionnaire) do |f| %>
     <% preferences_asked.each do |key, i| %>
         <p><%= i[:q_num] %></p>
-        <div class="form-group">
+        <div class="preference-block">
           <% label_id1 = i[:q_num] + '_' + i[:text1] %>
           <% label_id2 = i[:q_num] + '_' + i[:text2] %>
 

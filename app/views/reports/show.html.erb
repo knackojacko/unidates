@@ -1,3 +1,4 @@
+<% user_that_reported = find_user(@report.user_id) %>
 <% reported_user = find_user(@report.reported_user_id) %>
 
 <div class="container-fluid">
@@ -11,21 +12,31 @@
     <div class="col-sm-3"></div>
     <div class="col-sm-6 col-xs-12" align="center">
       <div class="container custom signup">
-        <div id="glass-pane"></div>
-        <div class="content" style="position:relative;">
-
-            <h2 style="text-align: center; color: silver!important;;">Submitted Report</h2>
+        <div id="glass-pane">
+          <div class="content" style="position:relative;">
+  
+              <h2 style="text-align: center; color: silver!important;;">Submitted Report</h2>
+              
+              <% if current_user.is_admin? %>
+                <h3>User Details</h3>
+                <p>Name: <%= user_that_reported.name %></p> 
+                <p>Email: <%= user_that_reported.email %></p>
+                <br>
+              <%else%>
+                <h3>Your Details</h3>
+                <p>Your Name: <%= current_user.name %></p> 
+                <p>Your Email: <%= current_user.email %></p>
                 
-            <h3>Your Details</h3>
-            <p>Your Name: <%= current_user.name %></p> 
-            <p>Your Email: <%= current_user.email %></p>
-            
-            <br>
-            
-            <h3>Reported User</h3> 
-            <p>Their Name: <%= reported_user.name %></p>
-            <p>Their Email: <%= reported_user.email %></p>
-            <p>Reason: <%= @report.problem %></p>
+                <br>
+              
+              <%end%>
+              
+              
+              <h3>Reported User</h3> 
+              <p>Their Name: <%= reported_user.name %></p>
+              <p>Their Email: <%= reported_user.email %></p>
+              <p>Reason: <%= @report.problem %></p>
+          </div>
         </div>
       </div>
     </div>
