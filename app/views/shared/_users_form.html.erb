@@ -7,25 +7,25 @@
 
     <div class="form-group">
       <%= f.email_field :email, placeholder: 'email', class: 'form-control custom' %>
-      <%= check_errors(@user, :name)%>
+      <%= check_errors(@user, :email)%>
     </div>
 
     <div class="form-group">
       <%= f.label :dob, 'birthday', class: 'form-control custom-label' %>
       <%= f.date_select :dob, {:order => [:day, :month, :year], default: 18.years.ago, :start_year => 2017, :end_year => 1905}, {:class => 'form-control custom-date-select'} %>
-      <%= check_errors(@user, :name)%>
+      <%= check_errors(@user, :dob)%>
     </div>
 
     <div class="form-group">
       <%= f.label :gender, 'gender', class: 'form-control custom-label-nospace' %>
       <%= f.select(:gender, ['Man', 'Woman'], {:prompt => 'I am a...'}, {:class => 'form-control custom-select'}) %>
-      <%= check_errors(@user, :name)%>
+      <%= check_errors(@user, :gender)%>
     </div>
 
     <div class="form-group">
       <%= f.label :preference, 'preference', class: 'form-control custom-label-nospace' %>
       <%= f.select(:preference, ['Men', 'Women', 'Both'], {:prompt => 'I\'m interested in...'}, {:class => 'form-control custom-select'}) %>
-      <%= check_errors(@user, :name)%>
+      <%= check_errors(@user, :preference)%>
     </div>
 
     <div class="form-group">
@@ -42,12 +42,12 @@
     <% if !url.match('users\/[1-9][0-9]*\/edit') %>
         <div class="form-group">
           <%= f.password_field :password, placeholder: 'password (keep it sneaky)', class: 'form-control custom' %>
-          <%= check_errors(@user, :name)%>
+          <%= check_errors(@user, :password)%>
         </div>
 
         <div class="form-group">
           <%= f.password_field :password_confirmation, placeholder: 'confirm password', class: 'form-control custom', :style => 'margin-bottom: 40px' %>
-          <%= check_errors(@user, :name)%>
+          <%= check_errors(@user, :password_confirmation)%>
         </div>
     <% end %>
     <%= f.submit yield(:button_text), class: 'btn btn-success', :style => 'width: 50%' %>
