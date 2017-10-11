@@ -50,7 +50,7 @@ gem 'bcrypt', '~> 3.1.11'
 gem "fog-aws"
 
 gem 'delayed_job_active_record'
-
+gem "figaro"
 gem 'paperclip'
 gem 'aws-sdk', '~> 2.3'
 
