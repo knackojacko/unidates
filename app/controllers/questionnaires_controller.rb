@@ -66,7 +66,7 @@ class QuestionnairesController < ApplicationController
 
     def check_correct_user
       if current_user != @questionnaire.user
-        flash[:danger] = "Bad boy!"
+        flash[:danger] = "Please sign up!"
         redirect_to questionnaires_path
       end
     end

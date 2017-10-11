@@ -208,3 +208,13 @@ margin-top: 5px;
 padding: 10px;
 
 }
+
+a.left.carousel-control {
+  background-image: none;
+  margin-left: -30px;
+}
+
+a.right.carousel-control {
+  background-image: none;
+  margin-right: -30px;
+}

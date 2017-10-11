@@ -91,31 +91,103 @@
 </div>
 -->
 
-<%= form_for(@questionnaire) do |f| %>
-    <% preferences_asked.each do |key, i| %>
-        <p><%= i[:q_num] %></p>
-        <div class="preference-block">
-          <% label_id1 = i[:q_num] + '_' + i[:text1] %>
-          <% label_id2 = i[:q_num] + '_' + i[:text2] %>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-2"></div>
 
-          <%= f.radio_button(i[:q_num], i[:text1], class: "input-hidden") %>
+    <div class="col-sm-8 col-xs-12" align="center">
+      <div class="container custom signup">
 
-          <%= f.label(label_id1.downcase) do %>
-              <%= image_tag(i[:image1]) %>
-          <% end %>
+        <div id="glass-pane">
+          <div class="content" style="position:relative;">
+            <!--Start form-->
+            <%= form_for(@questionnaire) do |f| %>
 
-          <%= f.radio_button(i[:q_num], i[:text2], class: "input-hidden") %>
+                <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="false">
 
-          <%= f.label(label_id2.downcase) do %>
-              <%= image_tag(i[:image2]) %>
-          <% end %>
+                  <!-- Wrapper for slides -->
+                  <div class="carousel-inner">
 
-          <%= f.label :priority, 'priority', class: 'form-control custom-label-nospace' %>
-          <%= f.select(i[:p_num], [1, 2, 3, 4, 5, 6, 7, 8, 9, 10], {:class => 'form-control custom-select'}) %>
+                    <!--LOOP HERE-->
+                    <% preferences_asked.each do |key, i| %>
 
+                        <div class="<%= key == 0 ? "item active" : "item" %>">
+                          <!--START CONTENT-->
+                          <table style="margin-left: 5%; margin-right: 5%;">
+                            <% label_id1 = i[:q_num] + '_' + i[:text1] %>
+                            <% label_id2 = i[:q_num] + '_' + i[:text2] %>
+
+                            <!--Question Title-->
+                            <tr>
+                              <td colspan="3" style="text-align: center; height: 30px;">
+                                <h1><%= "Question " + (key + 1).to_s %></h1></td>
+                            </tr>
+
+
+                            <!--Question content-->
+                            <tr>
+                              <!--Option 1-->
+                              <td style="text-align: center;">
+                                <%= f.radio_button(i[:q_num], i[:text1], class: "input-hidden") %>
+                                <%= f.label(label_id1.downcase) do %>
+                                    <%= image_tag(i[:image1]) %>
+                                <% end %>
+                              </td>
+
+                              <!--Priority-->
+                              <td style="text-align: center;">
+                                <%= f.label :priority, 'Importance (Highest = 1)', class: 'form-control custom-label-nospace' %>
+                                <%= f.select(i[:p_num], [1, 2, 3, 4, 5, 6, 7, 8, 9, 10], {:prompt => 'Choose your priority'}, {:class => 'form-control custom-date-select'}) %>
+                              </td>
+
+                              <!--Option 2-->
+                              <td style="text-align: center;">
+                                <%= f.radio_button(i[:q_num], i[:text2], class: "input-hidden") %>
+                                <%= f.label(label_id2.downcase) do %>
+                                    <%= image_tag(i[:image2]) %>
+                                <% end %>
+                              </td>
+                            </tr>
+                          </table>
+                          <!--END CONTENT-->
+
+                          <br/><br/>
+                          <% if key == 9 %>
+                              <%= f.hidden_field :user_id, :value => current_user.id %>
+                              <%= f.submit yield(:button_text), class: "btn btn-success btn-block" %>
+                          <% end %>
+
+                        </div>
+                    <% end %>
+                    <!--End LOOP-->
+
+
+                    <!-- Left and right controls -->
+                    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                      <span class="glyphicon glyphicon-chevron-left"></span>
+                      <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                      <span class="glyphicon glyphicon-chevron-right"></span>
+                      <span class="sr-only">Next</span>
+                    </a>
+                  </div>
+                </div>
+
+            <% end %>
+            <!--END FORM-->
+          </div>
         </div>
-    <% end %>
 
-    <%= f.hidden_field :user_id, :value => current_user.id %>
-    <%= f.submit yield(:button_text), class: "btn btn-primary" %>
-<% end %>
+      </div>
+    </div>
+
+    <div class="col-sm-2">
+    </div>
+  </div>
+</div>
+
+
+
+
+
