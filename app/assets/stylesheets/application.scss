@@ -16,6 +16,36 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+@media screen and (max-width: 767px) {
+  .pref-img{
+    height: 80px !important;
+    width: 80px !important;
+  }
+
+  .container.custom.signup>#glass-pane{
+    height:650px !important;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .pref-img{
+    height: 100px !important;
+    width: 100px !important;
+  }
+}
+@media (min-width: 992px) {
+  .pref-img{
+    height: 150px !important;
+    width: 150px !important;
+  }
+}
+@media (min-width: 1200px) {
+  .pref-img{
+    height: 200px !important;
+    width: 200px !important;
+  }
+}
+
 body {
   // Link to resource for safety reasons
   //https://www.flickr.com/photos/noquedanfotos/5425846901/in/photostream/

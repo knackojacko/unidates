@@ -96,10 +96,10 @@
     <div class="col-sm-1"></div>
 
     <div class="col-sm-10 col-xs-12" align="center">
-      <h1 style="padding-bottom: 10%;">Let us know about you.</h1>
+      <h1 style="padding-bottom: 5%;">Let us know about you.</h1>
       <div class="container custom signup">
 
-        <div id="glass-pane">
+        <div id="glass-pane" style="height: 580px;">
           <div class="content" style="position:relative;">
             <!--Start form-->
             <%= form_for(@questionnaire) do |f| %>
@@ -114,42 +114,48 @@
 
                         <div class="<%= key == 0 ? "item active" : "item" %>">
                           <!--START CONTENT-->
-                          <table style="margin-left: 15%; margin-right: 15%;">
+                          <table style="margin-left: 10%; margin-right: 10%;">
                             <% label_id1 = i[:q_num] + '_' + i[:text1] %>
                             <% label_id2 = i[:q_num] + '_' + i[:text2] %>
 
                             <!--Question Title-->
                             <tr>
                               <td colspan="3" style="text-align: center; height: 30px; font-family: Courier New, Courier, monospace !important;">
-                                <h1><%= i[:text1].tr("_", " ") + " or " + i[:text2].tr("_", " ") %></h1></td>
+                                <h1 style="width: 50vw;"><%= i[:text1].tr("_", " ") + " or " + i[:text2].tr("_", " ") %></h1></td>
                             </tr>
 
 
                             <!--Question content-->
                             <tr style="text-align: center">
+
                               <!--Option 1-->
                               <td style="padding-bottom: 25px;">
                                 <%= f.radio_button(i[:q_num], i[:text1], class: "input-hidden") %>
                                 <%= f.label(label_id1.downcase) do %>
-                                    <%= image_tag(i[:image1], style: "box-shadow: 10px 10px 5px rgba(33, 25, 25, 0.32);border-radius: 100px;") %>
+                                    <%= image_tag(i[:image1], :class => "pref-img", style: "margin-right: 15px; box-shadow: 10px 10px 5px rgba(33, 25, 25, 0.32);border-radius: 100px;") %>
                                 <% end %>
-                              </td>
-
-                              <!--Priority-->
-                              <td>
-                                <%= f.select(i[:p_num], [1, 2, 3, 4, 5, 6, 7, 8, 9, 10], {:prompt => 'Choose your priority'}, {:class => 'form-control custom-date-select'}) %>
-                                <%= f.label :priority, 'How much does this mean to you?', class: 'custom-label', style: 'font-weight: 100' %>
-                                <%= f.label :priority, '(Highest = 1)', class: 'custom-label', style: 'font-weight: 100' %>
                               </td>
 
                               <!--Option 2-->
                               <td style="padding-bottom: 25px;">
                                 <%= f.radio_button(i[:q_num], i[:text2], class: "input-hidden") %>
                                 <%= f.label(label_id2.downcase) do %>
-                                    <%= image_tag(i[:image2], style: "box-shadow: 10px 10px 5px rgba(33, 25, 25, 0.32);border-radius: 100px;") %>
+                                    <%= image_tag(i[:image2], :class => "pref-img", style: "margin-left: 15px;box-shadow: 10px 10px 5px rgba(33, 25, 25, 0.32);border-radius: 100px;") %>
                                 <% end %>
                               </td>
                             </tr>
+
+                            <tr style="text-align: center">
+                              <!--Priority-->
+                              <td colspan="3">
+                                <%= f.select(i[:p_num], [1, 2, 3, 4, 5, 6, 7, 8, 9, 10], {:prompt => 'Choose your priority'}, {:class => 'form-control custom-date-select'}) %>
+                                <br>
+                                <%= f.label :priority, 'How much does this mean to you?', class: 'custom-label', style: 'font-weight: 100' %>
+                                <br>
+                                <%= f.label :priority, '(Highest = 1)', class: 'custom-label', style: 'font-weight: 100' %>
+                              </td>
+                            </tr>
+
                           </table>
                           <!--END CONTENT-->
 
