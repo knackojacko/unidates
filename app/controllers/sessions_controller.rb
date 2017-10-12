@@ -14,8 +14,15 @@ class SessionsController < ApplicationController
           flash[:success] = "Hello admin"
           redirect_to users_path
         else
-          flash[:success] = "Login Successful"
-          redirect_to user
+
+          if user.questionnaire.blank? 
+            flash[:success] = "Welcome, please fillout your preferences!"
+            redirect_to new_questionnaire_path
+          else
+            flash[:success] = "Login Successfully"
+            redirect_to user
+          end
+          
         end
       else
         flash[:danger] = 'Please confirm your email'

@@ -1,6 +1,17 @@
 class Questionnaire < ApplicationRecord
   belongs_to :user
   
+
+  validates :pq1, presence: true
+  validates :pq2, presence: true
+  validates :pq3, presence: true
+  validates :pq4, presence: true
+  validates :pq5, presence: true
+  validates :pq6, presence: true
+  validates :pq7, presence: true
+  validates :pq8, presence: true
+  validates :pq9, presence: true
+  validates :pq10, presence: true
 =begin
 preference_left = Hash.new
 preference_left["Cats"] = "/images/cat.png"

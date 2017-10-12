@@ -29,8 +29,9 @@ class QuestionnairesController < ApplicationController
     @questionnaire = Questionnaire.new(questionnaire_params)
     
     if @questionnaire.save
-      redirect_to @questionnaire
+      redirect_to questionnaires_path
     else
+      flash[:danger] = "Please fill out all your preferences and prioritys"
       render 'new'
     end
 
