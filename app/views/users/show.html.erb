@@ -34,16 +34,16 @@
             <br>
             <i>
               <% @user.questionnaire.each do |questionnaire| %>
-                  <%= questionnaire.q1 %>,
-                  <%= questionnaire.q2 %>,
-                  <%= questionnaire.q3 %>,
-                  <%= questionnaire.q4 %>,
-                  <%= questionnaire.q5 %>,
-                  <%= questionnaire.q6 %>,
-                  <%= questionnaire.q7 %>,
-                  <%= questionnaire.q8 %>,
-                  <%= questionnaire.q9 %>,
-                  <%= questionnaire.q10 %>
+                  <%= questionnaire.q1.tr("_", " ") %>,
+                  <%= questionnaire.q2.tr("_", " ") %>,
+                  <%= questionnaire.q3.tr("_", " ") %>,
+                  <%= questionnaire.q4.tr("_", " ") %>,
+                  <%= questionnaire.q5.tr("_", " ") %>,
+                  <%= questionnaire.q6.tr("_", " ") %>,
+                  <%= questionnaire.q7.tr("_", " ") %>,
+                  <%= questionnaire.q8.tr("_", " ") %>,
+                  <%= questionnaire.q9.tr("_", " ") %>,
+                  <%= questionnaire.q10.tr("_", " ") %>
               <% end %>
             </i>
             <br>
