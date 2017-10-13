@@ -30,11 +30,13 @@
 
     <div class="form-group">
       <%= f.text_field :description, placeholder: 'description', class: 'form-control custom-select' %>
+      <%= check_errors(@user, :description)%>
     </div>
 
     <div class="field">
-      <%= f.label :avatar %>
+      <%= f.label :avatar, 'profile photo' %>
       <%= f.file_field :avatar %>
+      <%= check_errors(@user, :avatar)%>
     </div>
 
     <!--Only show password for signup page-->
