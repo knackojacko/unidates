@@ -58,7 +58,7 @@ module UsersHelper
     def check_errors(user, var_name)
         if !(message = user.errors.full_messages_for(var_name)).empty?()
             message.each do |msg|
-                @error_string = "<p>" + msg + "</p>"
+                @error_string = "<p style='color: red;'>" + msg + "</p>"
             end
             return @error_string.html_safe
         end
