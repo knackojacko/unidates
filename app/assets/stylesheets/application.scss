@@ -38,11 +38,19 @@
     height: 150px !important;
     width: 150px !important;
   }
+  .pref-img.custom-img{
+    height: 125px !important;
+    width: 125px !important;
+  }
 }
 @media (min-width: 1200px) {
   .pref-img{
     height: 200px !important;
     width: 200px !important;
+  }
+  .pref-img.custom-img{
+    height: 150px !important;
+    width: 150px !important;
   }
 }
 
