@@ -51,6 +51,11 @@ en:
               blank: Gender can't be blank
             preference:
               blank: Preference can't be blank
+            description:
+              invalid: Description is invalid
+            avatar:
+              blank: You must select a profile photo
+              invalid: Only .jpg and .png image files are accepted
             password:
               blank: Password can't be blank
               too_short: Password is too short (minimum is 8 characters)
