@@ -18,15 +18,21 @@
 
             <hr>
 
+            <%
+              # Calc time
+              now = Time.now.utc.to_date
+              age = now.year - @user.dob.year - ((now.month > @user.dob.month || (now.month == @user.dob.month && now.day >= @user.dob.day)) ? 0 : 1)
+            %>
+
             <strong>Email:&nbsp;</strong><i><%= @user.email %></i>
-            <br><strong>Birthday:&nbsp;</strong><i><%= @user.dob %></i><br>
+            <br><strong>Age:&nbsp;</strong><i><%= age %></i><br>
 
 
             <br><strong>I'm A:&nbsp;</strong><i><%= @user.gender %></i>
             <br><strong>I'm Interested In:&nbsp;</strong><i><%= @user.preference %></i>
 
 
-            <p> description: <%= @user.description %></p>
+            <p><strong>Description: <%= @user.description %></strong></p>
 
             <br>
             <br>
