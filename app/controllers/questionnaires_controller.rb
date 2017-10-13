@@ -31,7 +31,7 @@ class QuestionnairesController < ApplicationController
     if @questionnaire.save
       redirect_to questionnaires_path
     else
-      flash[:danger] = "Please fill out all your preferences and prioritys"
+      flash[:danger] = "Please complete your preferences first"
       render 'new'
     end
 

@@ -99,7 +99,7 @@
       <h1 style="padding-bottom: 5%;">Let us know about you.</h1>
       <div class="container custom signup">
 
-        <div id="glass-pane" style="height: 580px;">
+        <div id="glass-pane" style="max-height: 580px;">
           <div class="content" style="position:relative;">
             <!--Start form-->
             <%= form_for(@questionnaire) do |f| %>
@@ -114,7 +114,7 @@
 
                         <div class="<%= key == 0 ? "item active" : "item" %>">
                           <!--START CONTENT-->
-                          <table style="margin-left: 10%; margin-right: 10%;">
+                          <table style>
                             <% label_id1 = i[:q_num] + '_' + i[:text1] %>
                             <% label_id2 = i[:q_num] + '_' + i[:text2] %>
 

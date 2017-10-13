@@ -36,7 +36,6 @@ class UsersController < ApplicationController
 
             redirect_to root_url
         else
-            flash[:danger] = "Something went wrong"
             render 'new'
         end
     end
