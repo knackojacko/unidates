@@ -6,8 +6,8 @@
 
 @media screen and (max-width: 767px) {
   .card{
-    height: 50vh !important;
-    width: 42% !important;
+    height: 33vh !important;
+    width: 40% !important;
   }
 
   .option-one{
@@ -18,6 +18,10 @@
     margin-right: 5% !important;
   }
 
+  .option-head {
+    font-size: 14px !important;
+  }
+
   .priority-bar > .form-control.custom-date-select {
     margin-top: 25px !important;
   }
@@ -25,18 +29,27 @@
   .priority-bar > .form-control.custom-label {
     padding-left: 30px !important;
     padding-right: 30px !important;
+    visibility: hidden;
+    display: none;
   }
 
   .carousel-control .glyphicon-chevron-left {
     margin-left: -7px !important;
+    margin-top: 12vh !important;
   }
 
   .carousel-control .glyphicon-chevron-right {
     margin-right: -7px !important;
+    margin-top: 12vh !important;
   }
 
   h1 {
     font-size: 16px !important;
+  }
+
+  .container.custom.signup.preference-container > .glass-pane {
+    height: 500px !important;
+    margin-top: 10vh !important;
   }
 }
 
