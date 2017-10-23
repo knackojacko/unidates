@@ -31,3 +31,47 @@
 .container.custom > img {
   height: 20px !important;
 }
+
+.card {
+  width: 35%;
+  height: 35vh;
+  background-color: rgba(150, 150, 150, 0.2);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  text-align: center;
+}
+
+.option-one {
+  float: left;
+  margin-left: 6%;
+  margin-bottom: 6px;
+}
+
+.option-two {
+  float: right;
+  margin-right: 6%;
+  margin-bottom: 6px;
+
+}
+
+.option-img {
+  border-radius:100%;
+  margin: 25% auto 0;
+}
+
+.option-head {
+  font-family: "Courier Header", Courier, Monospaced;
+  margin-top: 8%;
+  font-size: 22px;
+  word-wrap: break-word;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.card-breaker {
+  border-style: solid;
+  border: solid 1px rgba(200, 200, 200, 0.3);
+  margin-top: 8%;
+  margin-right: 10%;
+  margin-left: 10%;
+  border-radius: 15%;
+}

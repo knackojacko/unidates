@@ -2,8 +2,8 @@ module SessionsHelper
     #logs in given user
     def log_in(user)
         session[:user_id] = user.id
-        # 20 Minute timeout
-        session[:timeout] = Time.current + 20 * 60
+        # 24 hour timeout
+        session[:timeout] = Time.current + 24 * 60 * 60
     end
 
     #return current loggin-in user

@@ -17,38 +17,38 @@
 @import "bootstrap";
 
 @media screen and (max-width: 767px) {
-  .pref-img{
+  .img-size{
     height: 80px !important;
     width: 80px !important;
   }
 
-  .container.custom.signup>#glass-pane{
+  .container.custom.signup>.glass-pane{
     height:650px !important;
   }
 }
 
 @media screen and (min-width: 768px) {
-  .pref-img{
-    height: 100px !important;
-    width: 100px !important;
+  .img-size{
+    height: 75px !important;
+    width: 75px !important;
   }
 }
 @media (min-width: 992px) {
-  .pref-img{
-    height: 150px !important;
-    width: 150px !important;
+  .img-size{
+    height: 100px !important;
+    width: 100px !important;
   }
-  .pref-img.custom-img{
+  .img-size.custom-img{
     height: 125px !important;
     width: 125px !important;
   }
 }
 @media (min-width: 1200px) {
-  .pref-img{
-    height: 200px !important;
-    width: 200px !important;
+  .img-size{
+    height: 120px !important;
+    width: 120px !important;
   }
-  .pref-img.custom-img{
+  .img-size.custom-img{
     height: 150px !important;
     width: 150px !important;
   }
@@ -126,18 +126,12 @@ body {
   left: -9999px;
 }
 
-input[type=radio]:checked + label > img {
-
-}
-
-input[type=radio] + label > img {
-  width: 150px;
-  height: 150px;
+input[type=radio] + .card {
   opacity: 0.5;
   transition: 500ms all;
 }
 
-input[type=radio]:checked + label > img {
+input[type=radio]:checked +  .card {
   opacity: 1;
 }
 
@@ -249,10 +243,10 @@ padding: 10px;
 
 a.left.carousel-control {
   background-image: none;
-  margin-left: -30px;
+  margin-left: -6%;
 }
 
 a.right.carousel-control {
   background-image: none;
-  margin-right: -30px;
+  margin-right: -6%;
 }

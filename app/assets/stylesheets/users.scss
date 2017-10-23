@@ -28,7 +28,7 @@
   width: 90% !important;
 }
 
-#glass-pane {
+.glass-pane {
   z-index: 1;
   position: relative;
   width: 100%;
@@ -40,7 +40,7 @@
   padding-bottom: 50px;
 }
 
-#glass-pane:before {
+.glass-pane:before {
   z-index: -1;
   position: absolute;
   content: '';
