@@ -98,7 +98,7 @@
     <div class="col-sm-10 col-xs-12" align="center">
       <div class="container custom signup preference-container">
 
-        <div class="glass-pane" style="max-height: 580px;">
+        <div class="glass-pane">
           <div class="content" style="position:relative;">
 
             <h1 style="padding-bottom: 2%; font-family: monospace;">What are you looking for?</h1>
@@ -119,18 +119,6 @@
                           <% label_id1 = i[:q_num] + '_' + i[:text1] %>
                           <% label_id2 = i[:q_num] + '_' + i[:text2] %>
 
-                          <!--&lt;!&ndash;Question Title&ndash;&gt;-->
-                          <!--<tr>-->
-                          <!--<td colspan="3" style="text-align: center; height: 30px; font-family: Courier New, Courier, monospace !important;">-->
-                          <!--<h1 style="width: 50vw;"><%= i[:text1].tr("_", " ") + " or " + i[:text2].tr("_", " ") %></h1></td>-->
-                          <!--</tr>-->
-
-
-                          <!--&lt;!&ndash;Question content&ndash;&gt;-->
-                          <!--<tr style="text-align: center">-->
-
-                          <!--&lt;!&ndash;Option 1&ndash;&gt;-->
-                          <!--<td style="padding-bottom: 25px;">-->
                           <%= f.radio_button(i[:q_num], i[:text1], class: "input-hidden") %>
                           <div class="card option-one" style="display: inline-block">
                             <%= f.label(label_id1.downcase) do %>
@@ -154,26 +142,6 @@
                             <%= f.label :priority, 'How much does this mean to you? (1 = HIGH)', class: 'form-control custom-label', style: 'font-weight: 100; display: inline-grid;margin-top: 2%;' %>
                             <%= f.select(i[:p_num], [1, 2, 3, 4, 5, 6, 7, 8, 9, 10], {:prompt => 'Choose your priority'}, {:class => 'form-control custom-date-select'}) %>
                           </div>
-
-                          <!--</td>-->
-
-                          <!--&lt;!&ndash;Option 2&ndash;&gt;-->
-                          <!--<td style="padding-bottom: 25px;">-->
-
-                          <!--</td>-->
-                          <!--</tr>-->
-
-                          <!--<tr style="text-align: center">-->
-                          <!--&lt;!&ndash;Priority&ndash;&gt;-->
-                          <!--<td colspan="3">-->
-                          <!--
-                          <!--<br>-->
-                          <!--<%= f.label :priority, '(Highest = 1)', class: 'form-control custom-label', style: 'font-weight: 100' %>-->
-                          <!--</td>-->
-                          <!--</tr>-->
-
-                          <!--</table>-->
-                          <!--END CONTENT-->
 
                           <% if key == 9 %>
                               <%= f.hidden_field :user_id, :value => current_user.id %>
