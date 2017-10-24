@@ -121,21 +121,21 @@
 
                           <%= f.radio_button(i[:q_num], i[:text1], class: "input-hidden") %>
                           <div class="card option-one" style="display: inline-block">
-                            <%= f.label(label_id1.downcase) do %>
+                            <%= f.label(label_id1.downcase, style: "width: 100%; height: 100%;") do %>
                                 <%= image_tag(i[:image1], :class => "option-img img-size") %>
+                                <div class="card-breaker"></div>
+                                <div class="option-head"><%= i[:text1].tr('_', ' ') %></div>
                             <% end %>
-                            <div class="card-breaker"></div>
-                            <div class="option-head"><%= i[:text1].tr('_', ' ') %></div>
                           </div>
 
 
                           <%= f.radio_button(i[:q_num], i[:text2], class: "input-hidden") %>
                           <div class="card option-two" style="display: inline-block">
-                            <%= f.label(label_id2.downcase) do %>
+                            <%= f.label(label_id2.downcase, style: "width: 100%; height: 100%;") do %>
                                 <%= image_tag(i[:image2], :class => "option-img img-size") %>
-                            <% end %>
                             <div class="card-breaker"></div>
                             <div class="option-head"><%= i[:text2].tr('_', ' ') %></div>
+                            <% end %>
                           </div>
 
                           <div class="priority-bar">
